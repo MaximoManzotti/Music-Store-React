@@ -1,0 +1,98 @@
+.Menu_Phone {
+    display: none;
+}
+
+@media screen and (max-width: 902px) {
+    .Menu_Phone {
+        display: flex;
+    }
+    .Nav_contenedor_Pc {
+        display: none;
+    }
+}
+
+.Menu_Carrito {
+    text-decoration: none;
+    color: #dfc298;
+}
+
+.Menu_Carrito:hover {
+    color: #743081;
+}
+
+.Menu_Carrito:active {
+    color: #682e74;
+}
+
+.Menu {
+    text-decoration: none;
+    color: #dfc298;
+}
+
+.Menu:hover {
+    text-decoration: none;
+    color: #c09f71;
+}
+
+.Menu:active {
+    text-decoration: none;
+    color: rgb(90, 87, 87);
+}
+
+.Logo_murcielago {
+    background-color: #dfc298;
+    margin: 0.5em;
+    margin-right: 0em;
+    height: 4em;
+    width: 4em;
+    border-radius: 0.5em;
+}
+
+nav li {
+    display: inline;
+}
+
+li {
+    list-style: none;
+    margin-top: 1em;
+    padding: 1em;
+}
+
+div.logo_menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.LogoyMarca {
+    display: flex;
+}
+
+.Nombre_marca {
+    color: white;
+    margin-left: 0.1em;
+}
+
+.Nav_contenedor_Pc {
+    padding-top: 1em;
+}
+
+.Nav_contenedor {
+    display: flex;
+    padding-top: 1em;
+}
+
+.Nav_contenedor_close {
+    display: none;
+}
+
+.Ul_Phone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    background-color: black;
+    right: 0em;
+    top: 40px;
+    z-index: 2;
+    padding-left: 0px;
+}

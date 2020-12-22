@@ -1,0 +1,50 @@
+.Counter_Container {
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    justify-content: space-between;
+}
+
+.Sumar {
+    width: 3em;
+    margin: 0px;
+    height: 3em;
+}
+
+.Restar {
+    width: 3em;
+    margin: 0px;
+    height: 3em;
+}
+
+.numero_producto {
+    margin: 0px;
+    display: grid;
+    align-content: center;
+}
+
+p.Cantidad_Productos {
+    background-color: #dfc298;
+    color: black;
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+}
+
+.agregar_al_carrito {
+    width: 20em;
+    height: 3em;
+    background-color: #dfc298;
+}
+
+.count_container {
+    display: block;
+}
+
+
+/* .Producto:hover .Foto_guitarra {
+    padding: 1em;
+    height: 10em;
+    width: 5em;
+    border-radius: 2em;
+} */
