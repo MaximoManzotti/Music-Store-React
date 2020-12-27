@@ -5,3 +5,20 @@
 .count_container {
     width: 12em;
 }
+
+.container_cargando {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.gif_carga {
+    display: flex;
+    justify-content: center;
+    width: 10em;
+}
+
+.div_gif {
+    display: flex;
+    justify-content: center;
+}

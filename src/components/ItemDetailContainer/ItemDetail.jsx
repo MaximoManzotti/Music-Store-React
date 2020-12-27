@@ -20,7 +20,7 @@ import React, { useState, useEffect } from 'react';
     const getProducts = new Promise((resolve, reject) => {
            setTimeout(() => {
                   resolve(Guitarras);
-           },200)
+           },4000)
     })
 
     const getProducstFromDB = async () => {
@@ -53,8 +53,10 @@ import React, { useState, useEffect } from 'react';
            ))}
 
 
-    </> : <div>
-                  <img src={Loading} alt="Cargando..." />
+    </> : <div className='container_cargando'>
+                  <div className='div_gif'>
+                  <img src={Loading} alt="Cargando..." className='gif_carga'/>
+                  </div>
                   <p className='txt_cargando'>Cargando</p>
            </div>
     }</section>

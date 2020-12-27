@@ -2,18 +2,10 @@ import NavBarPhone from './components/NavBar/NavBarPhone';
 import Guitarra from './components/ItemListContainer/Guitarras/guitarras';
 import NavBar from './components/NavBar/NavBar'
 import Detail from './components/ItemDetailContainer/ItemDetail';
-
+import {BrowserRouter, Switch, Route } from 'react-router-dom'
 
 
 function App() {
-  const sectionToShow = (section) => {
-    switch(section) {
-      case 'Guitarra': return <Guitarra />;
-      // case 'Category': return <Category />;
-      case 'Detail': return <Detail />;
-      default: return <Guitarra/>
-    }
-  }
 
   return (
     <> 
@@ -23,7 +15,19 @@ function App() {
         <NavBarPhone />
       </header>
 
-      {sectionToShow('Detail')}
+       <BrowserRouter>
+      <Switch>
+        <Route exact path="/">
+        <Guitarra />
+        </Route>
+        <Route path="/Instrumentos">
+        <Guitarra />
+        </Route>
+        <Route path="/Detail">
+          <Detail />
+        </Route>
+      </Switch>
+    </BrowserRouter>
           </div>
       
     </>
