@@ -14,10 +14,6 @@ function Header() {
                 <nav className='Nav_contenedor_Pc'>
                     <ul >
                         <li className='lista'><NavBar/></li>
-                        <li className='lista'><a href="/Guitarras" className='Menu'>Guitarras</a></li>
-                        <li className='lista'><a href="/Bajos" className='Menu'>Bajos</a></li>
-                        <li className='lista'><a href="/Baterias" className='Menu'>Baterias</a></li>
-                        <li className='lista'><a href="/Accesorios" className='Menu'>Accesorios</a></li>
                         <li className='lista'><a href='/Carrito' className="Menu_Carrito"><IconoCarrito  /></a></li>
                     </ul>
                 </nav>
