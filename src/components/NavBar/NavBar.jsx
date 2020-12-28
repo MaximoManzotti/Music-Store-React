@@ -1,6 +1,7 @@
 import Murcielago_Logo from '../assets/bat_logo.svg';
 import './NavBarStyles.css';
 import IconoCarrito from './CartWidget'
+import NavBar from './NavMap.jsx'
 
 function Header() {
     return (
@@ -12,12 +13,12 @@ function Header() {
                 </div>
                 <nav className='Nav_contenedor_Pc'>
                     <ul >
-                        <li className='lista'><a href="#Inicio" className='Menu'>Inicio</a></li>
-                        <li className='lista'><a href="#Guitarras" className='Menu'>Guitarras</a></li>
-                        <li className='lista'><a href="#Bajos" className='Menu'>Bajos</a></li>
-                        <li className='lista'><a href="#Baterias" className='Menu'>Baterias</a></li>
-                        <li className='lista'><a href="#Accesorios" className='Menu'>Accesorios</a></li>
-                        <li className='lista'><a href='#Carrito' className="Menu_Carrito"><IconoCarrito  /></a></li>
+                        <li className='lista'><NavBar/></li>
+                        <li className='lista'><a href="/Guitarras" className='Menu'>Guitarras</a></li>
+                        <li className='lista'><a href="/Bajos" className='Menu'>Bajos</a></li>
+                        <li className='lista'><a href="/Baterias" className='Menu'>Baterias</a></li>
+                        <li className='lista'><a href="/Accesorios" className='Menu'>Accesorios</a></li>
+                        <li className='lista'><a href='/Carrito' className="Menu_Carrito"><IconoCarrito  /></a></li>
                     </ul>
                 </nav>
             </div>

@@ -20,11 +20,11 @@ function App() {
         <Route exact path="/">
         <Guitarra />
         </Route>
-        <Route path="/Instrumentos">
+        <Route path="/Guitarras">
         <Guitarra />
         </Route>
         <Route path="/Detail">
-          <Detail />
+          <Detail/>
         </Route>
       </Switch>
     </BrowserRouter>
