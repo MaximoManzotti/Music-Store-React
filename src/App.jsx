@@ -16,16 +16,14 @@ function App() {
        <BrowserRouter>
          <header>
         <NavBar />
-        <NavBarPhone />
+        <NavBarPhone/>
           </header>
+          
       <Switch>
-        <Route exact path="/">
-        <Guitarra />
+        <Route exact path="/guitarras">
+        <Guitarra/>
         </Route>
-        <Route path="/guitarras">
-        <Guitarra />
-        </Route>
-        <Route path='/guitarras/:id'>
+        <Route exact path='/guitarras/:id?'>
           <Detail/>
         </Route>
       </Switch>
