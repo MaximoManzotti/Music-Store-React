@@ -6,14 +6,11 @@ import ItemListContainer from '../ItemListContainer/ItemListContainer';
 
 function Carrito() {
 
-  const [showCartList, setshowCartList] = useState(false);
-  const openCartList = () => {
-      setshowCartList(!showCartList);   
-  }
+
   
  
 
-  return(<> <CgShoppingCart className='Carrito' onClick={openCartList} />
-  <ItemListContainer show={showCartList}/> </>)};
+  return(<> <CgShoppingCart className='Carrito'/>
+  <ItemListContainer/> </>)};
 
 export default Carrito;

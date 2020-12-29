@@ -1,7 +1,7 @@
 import '../../ItemListContainer/style_Instrumentos.css';
 import Bateria_Spears from '../../assets/BateriasSpears.jpg'
-import Bajo_Hofner from '../../assets/Hofner.jpg';
-import Bajo_Squier from '../../assets/BajoSquier.jpg'
+import Bateria_Pdp from '../../assets/Bateria_doble.jpg';
+import Bateria_Ludivig from '../../assets/Bateria_Comic.jpg'
 import Counter from '../../Counter/counter';
 import Loading from '../../assets/loading.gif'
 import React, { useState, useEffect} from 'react'
@@ -12,7 +12,7 @@ function Bajos() {
               {
                      id: 1,
                      Marca: 'Spears',
-                     Modelo: 'Madera y negra',
+                     Modelo: 'Madera y Negro',
                      Imagen: Bateria_Spears,
                      descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eaque tempora quia natus dicta architecto, quibusdam nisi quos sunt non repellat iusto necessitatibus laudantium voluptatem vel dolorum fuga porro reprehenderit.' ,
                      Precio: '$50000',
@@ -20,21 +20,21 @@ function Bajos() {
               },
               {
                 id: 2,
-                Marca: 'Hofner',
-                Modelo: 'Paul McCartney',
-                Imagen: Bajo_Hofner,
+                Marca: 'PDP',
+                Modelo: 'Doble, Madera y Negro',
+                Imagen: Bateria_Pdp,
                 descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eaque tempora quia natus dicta architecto, quibusdam nisi quos sunt non repellat iusto necessitatibus laudantium voluptatem vel dolorum fuga porro reprehenderit.' ,
                 Precio: '$50000',
                 Quantity: 7
          },
          {
             id: 3,
-            Marca: 'Squier',
-            Modelo: 'Strastocaster',
-            Imagen: Bajo_Squier,
+            Marca: 'Ludivig',
+            Modelo: 'Comic',
+            Imagen: Bateria_Ludivig,
             descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eaque tempora quia natus dicta architecto, quibusdam nisi quos sunt non repellat iusto necessitatibus laudantium voluptatem vel dolorum fuga porro reprehenderit.' ,
             Precio: '$50000',
-            Quantity: 3
+            Quantity: 9
      },];
        const getProducts = new Promise((resolve, reject) => {
               setTimeout(() => {

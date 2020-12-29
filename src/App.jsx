@@ -2,6 +2,7 @@ import NavBarPhone from './components/NavBar/NavBarPhone';
 import Guitarra from './components/ItemListContainer/Guitarras/guitarras';
 import Bajos from './components/ItemListContainer/Bajos/Bajos'
 import Baterias from './components/ItemListContainer/Baterias/baterias'
+import Accesorios from './components/ItemListContainer/Accesorios/accesorios'
 import NavBar from './components/NavBar/NavBar'
 import Detail from './components/ItemDetailContainer/ItemDetail';
 import {BrowserRouter, Switch, Route } from 'react-router-dom'
@@ -22,8 +23,17 @@ function App() {
           </header>
 
       <Switch>
+      <Route exact path="/accesorios">
+        <Accesorios/>
+        </Route>
+        <Route exact path="/accesorios/:id?">
+        <Accesorios/>
+        </Route>
       <Route exact path="/baterias">
         <Baterias/>
+        </Route>
+        <Route exact path='/baterias/:id?'>
+          <Detail/>
         </Route>
       <Route exact path="/bajos">
         <Bajos/>
