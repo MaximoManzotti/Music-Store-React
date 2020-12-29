@@ -13,7 +13,7 @@ function Header() {
                 </div>
                 <nav className='Nav_contenedor_Pc'>
                     <ul >
-                        <li className='lista'><NavBar/></li>
+                        <NavBar/>
                         <li className='lista'><a href='/Carrito' className="Menu_Carrito"><IconoCarrito  /></a></li>
                     </ul>
                 </nav>

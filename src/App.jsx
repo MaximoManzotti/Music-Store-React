@@ -10,24 +10,28 @@ function App() {
   return (
     <> 
          <div className="App">
-      <header>
+    
+       
+  
+       <BrowserRouter>
+         <header>
         <NavBar />
         <NavBarPhone />
-      </header>
-
-       <BrowserRouter>
+          </header>
       <Switch>
         <Route exact path="/">
         <Guitarra />
         </Route>
-        <Route path="/Guitarras">
+        <Route path="/guitarras">
         <Guitarra />
         </Route>
-        <Route path="/Detail">
+        <Route path='/guitarras/:id'>
           <Detail/>
         </Route>
       </Switch>
     </BrowserRouter>
+    
+
           </div>
       
     </>

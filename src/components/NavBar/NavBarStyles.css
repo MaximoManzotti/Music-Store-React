@@ -52,10 +52,10 @@ nav li {
     display: inline;
 }
 
-li {
+li{
     list-style: none;
     margin-top: 1em;
-    padding: 1em;
+    padding: 0.5em;
 }
 
 div.logo_menu {

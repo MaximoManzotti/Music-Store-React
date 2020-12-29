@@ -3,24 +3,25 @@ import NavItem from './NavLink.jsx'
 function Nav({titulo, action}) {
     const menuItems = [
         {
-            texto: 'Guitarras',
-            ruta: '/Guitarras',
+            texto: 'guitarras',
+            ruta: '/guitarras',
         },
         {
-            texto: 'Bajos',
-            ruta: '/Bajos',
+            texto: 'bajos',
+            ruta: '/bajos',
         },
         {
-            texto:'Baterias',
-            ruta: '/Baterias',
+            texto:'baterias',
+            ruta: '/baterias',
         },
         {
-            texto:'Accesorios',
-            ruta: '/Accesorios',
+            texto:'accesorios',
+            ruta: '/accesorios',
         },
     ]
+
     return (
-         menuItems.map((seccion, index) => <NavItem key={index} text={seccion.texto} url={seccion.ruta} />)  )
+         menuItems.map((seccion, index) => <li> <NavItem key={index} text={seccion.texto} url={seccion.ruta}/></li>)  )
 }
 
 export default Nav;

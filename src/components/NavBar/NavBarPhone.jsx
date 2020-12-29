@@ -1,7 +1,7 @@
 import './NavBarStyles.css';
 import {useState} from 'react';
 import IconoCarrito from './CartWidget'
-
+import NavItem from './NavMap'
 function NavPhone() {
     const [showMenu, setshowMenu] = useState(false);
 
@@ -19,11 +19,7 @@ function NavPhone() {
                     </div>
                     <nav className={showMenu ? 'Nav_contenedor' : 'Nav_contenedor_close' }>
                         <ul className="Ul_Phone">
-                            <li className='lista'><a href="#Inicio" className='Menu'>Inicio</a></li>
-                            <li className='lista'><a href="#Guitarras" className='Menu'>Guitarras</a></li>
-                            <li className='lista'><a href="#Bajos" className='Menu'>Bajos</a></li>
-                            <li className='lista'><a href="#Baterias" className='Menu'>Baterias</a></li>
-                            <li className='lista'><a href="#Accesorios" className='Menu'>Accesorios</a></li>
+                           <NavItem/>
                         </ul>
                     </nav>
                 </div>
