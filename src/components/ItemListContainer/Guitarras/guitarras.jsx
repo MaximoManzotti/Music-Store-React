@@ -4,8 +4,8 @@ import Imagen_Epiphone from '../../assets/epiphone.jpg';
 import Imagen_Telecaster from '../../assets/telecaster.jpg';
 import Counter from '../../Counter/counter';
 import Loading from '../../assets/loading.gif'
-import React, { useState, useEffect } from 'react'
-import Detail from '../../ItemDetailContainer/ItemDetail'
+import React, { useState, useEffect} from 'react'
+
 function Guitarras() {
        const [items, setItems] = useState([]);
        const Guitarras = [
@@ -57,14 +57,15 @@ function Guitarras() {
 
        return (<section className='contenedor_instrumentos'>{items.length ? <>
 
-              {(items.map(u => <div><div className='Producto' key={u.id}>
+              {(items.map(u =>  
+                       
+                     <div className='Producto' key={u.id}>
                      <p className='txt_producto'>{u.Marca} {u.Modelo}</p>
                      <img src={u.Imagen} alt="Guitarra_Marca_Fender" className="Foto_guitarra" />
                      <p className='txt_producto'>{u.Precio}</p>
-                     <Counter Quantity={u.Quantity} /> </div>
-
-                     <Detail id={u.id} Marca={u.Marca}  Modelo={u.Modelo}  Imagen={u.Imagen}  Precio={u.Precio}  Quantity={u.Quantity}/>  </div>
-                     
+                     <Counter Quantity={u.Quantity} />
+                     {/* <Link to= {`/guitarras/${u.id}`}>Ver Mas</Link> */}
+                      </div> 
               ))}
 
 
