@@ -60,7 +60,7 @@ function Bajos() {
                      <img src={u.Imagen} alt="Bajo" className="Foto_instrumento" />
                      <p className='txt_producto'>{u.Precio}</p>
                      <Counter Quantity={u.Quantity} />
-                      <Link to={`/bajos/${u.id}`}>Ver Mas</Link>
+                      <Link to={`/baterias/${u.id}`}>Ver Mas</Link>
                       </div> 
               ))}
        </> : <div>

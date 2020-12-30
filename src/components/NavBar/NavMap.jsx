@@ -21,7 +21,7 @@ function Nav({titulo, action}) {
     ]
 
     return (
-         menuItems.map((seccion, index) => <li> <NavItem key={index} text={seccion.texto} url={seccion.ruta}/></li>)  )
+         menuItems.map((seccion, index) => <li> <NavItem key={index} text={seccion.texto} url={`/category${seccion.ruta}`}/></li>))
 }
 
 export default Nav;

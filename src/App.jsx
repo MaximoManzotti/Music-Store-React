@@ -23,28 +23,28 @@ function App() {
           </header>
 
       <Switch>
-      <Route exact path="/accesorios">
+      <Route exact path="/category/accesorios">
         <Accesorios/>
         </Route>
-        <Route exact path="/accesorios/:id?">
-        <Accesorios/>
+        <Route exact path="/category/accesorios/:id?">
+        <Detail/>
         </Route>
-      <Route exact path="/baterias">
+      <Route exact path="/category/baterias">
         <Baterias/>
         </Route>
-        <Route exact path='/baterias/:id?'>
+        <Route exact path='/category/baterias/:id?'>
           <Detail/>
         </Route>
-      <Route exact path="/bajos">
+      <Route exact path="/category/bajos">
         <Bajos/>
         </Route>
-        <Route exact path="/guitarras">
+        <Route exact path="/category/guitarras">
         <Guitarra/>
         </Route>
-        <Route exact path='/Bajos/:id?'>
+        <Route exact path='/category/Bajos/:id?'>
           <Detail/>
         </Route>
-        <Route exact path='/guitarras/:id?'>
+        <Route exact path='/category/guitarras/:id?'>
           <Detail/>
         </Route>
       </Switch>
