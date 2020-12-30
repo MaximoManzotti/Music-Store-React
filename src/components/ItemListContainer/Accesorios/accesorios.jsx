@@ -1,5 +1,5 @@
 import '../../ItemListContainer/style_Instrumentos.css';
-import Kit_Pedales from '../../assets/kit_pedales.jpg'
+import Kit_Pedales from '../../assets/kit_pedales.jpg';
 import CorreaAnimalPrint from '../../assets/Correa_Animal_Print.jpg'
 import CorreaPatronAzul from '../../assets/Correa_Patron_Azul.jpg'
 import Counter from '../../Counter/counter';

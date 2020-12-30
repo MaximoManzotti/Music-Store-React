@@ -6,8 +6,18 @@ import Counter from '../../Counter/counter';
 import Loading from '../../assets/loading.gif'
 import React, { useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
+import Instrumentos from '../ProductList/productlist'
+
 function Guitarras() {
+       function prueba(){
+              // Instrumentos.filter(guitarra => guitarra === guitarra.categoria)
+       console.log(Instrumentos.filter(guitarra => guitarra === Instrumentos.categoria))}
+       prueba()
+
        const [items, setItems] = useState([]);
+
+
+
        const Guitarras = [
               {
                      id: 1,
