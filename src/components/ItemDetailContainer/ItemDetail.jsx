@@ -24,16 +24,14 @@ import ProductDetail from './ItemDetailConteiner';
     }, [id]);
     return (
         <>
-            {
-                product ?
+            { product ?
                 <div className="container">
                     <ProductDetail item={product} />
                     <section>
                         El id del producto seleccionado es: {id}
                     </section>
                 </div> : 
-                <p>Cargando producto...</p>
-            }
+                <p>Cargando producto...</p>  }
         </>
     )
 }

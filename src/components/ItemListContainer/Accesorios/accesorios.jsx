@@ -8,7 +8,7 @@ import React, { useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
 function Bajos() {
        const [items, setItems] = useState([]);
-       const Guitarras = [
+       const Accesorios = [
               {
                      id: 1,
                      Marca: 'Varios',
@@ -38,7 +38,7 @@ function Bajos() {
      },];
        const getProducts = new Promise((resolve, reject) => {
               setTimeout(() => {
-                     resolve(Guitarras);
+                     resolve(Accesorios);
               },4000)
        })
        const getProducstFromDB = async () => {
@@ -60,7 +60,7 @@ function Bajos() {
                      <img src={u.Imagen} alt="Bajo" className="Foto_instrumento" />
                      <p className='txt_producto'>{u.Precio}</p>
                      <Counter Quantity={u.Quantity} />
-                      <Link to={`category/accesorios/${u.id}`}>Ver Mas</Link>
+                      <Link to={`/category/accesorios/${u.id}`} className='VerMas'>Ver Mas</Link>
                       </div> 
               ))}
        </> : <div>

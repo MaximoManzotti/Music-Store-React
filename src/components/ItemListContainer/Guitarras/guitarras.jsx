@@ -59,7 +59,7 @@ function Guitarras() {
                      <img src={u.Imagen} alt="Guitarra" className="Foto_instrumento" />
                      <p className='txt_producto'>{u.Precio}</p>
                      <Counter Quantity={u.Quantity} />
-                      <Link to={`category/guitarras/${u.id}`}>Ver Mas</Link>
+                      <Link to={`/category/guitarras/${u.id}`} className='VerMas'>Ver Mas</Link>
                       </div> 
               ))}
        </> : <div>

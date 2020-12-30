@@ -37,6 +37,7 @@ div .Producto {
     height: 15em;
     width: 10em;
     border-radius: 2em;
+    object-fit: cover;
 }
 
 .Producto:hover .count_container {
@@ -53,4 +54,11 @@ div .Producto {
 .txt_cargando {
     justify-content: center;
     display: flex;
+}
+
+.VerMas {
+    justify-content: center;
+    display: flex;
+    text-decoration: none;
+    color: #dfc298;
 }
