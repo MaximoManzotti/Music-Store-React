@@ -1,47 +1,53 @@
 import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import Instrumentos from '.././ItemListContainer/ProductList/productlist'
+import Counter from '../Counter/counter'
+import Loading from '../assets/loading.gif'
+
  const Detail = () => {
     const {id} = useParams();
     const [product, setProduct] = useState([]);
    
-
+  
+    // console.log(lista)
    
 
     const getProduct = new Promise((resolve, reject) => {
-        let lista = Instrumentos.filter(detalle => detalle.id === id)
-        console.log(lista)
-        setTimeout(() => {
-            resolve( {
-                id: id, 
-                Marca: lista.Marca,
-                Imagen: lista.Imagen,
-                Modelo: lista.Modelo,
-                descripcion: lista.descripcion,
-                Precio: lista.precio,
-                Quantity: lista.Quantity
-            } )
-        }, 500);
+        const lista = Instrumentos.filter(detalle => detalle.id === Number(id))
+        const lista_resuelta = lista[0]
+        resolve(lista_resuelta)
+        console.log(product.Quantity)
     });
-    useEffect(() => {
-        console.log(id);
-        getProduct
-        .then(response => setProduct(response))
-        .catch(error => console.log(error));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [id]);
-    return (
-        <>
-            { product ?
-                <div className="container">
-                    <section>
-                      <p>  El id del producto seleccionado es: {id}</p>
-                      <div></div>
-                    
-                    </section>
-                </div> : 
-                <p>Cargando producto...</p> }
-        </>
-    )
+
+    const getProducstFromDB = async () => {
+        try {
+               const result = await getProduct;
+                     setProduct(result);
+        } catch (error) {
+                    alert('No podemos mostrar el producto');
+        }} 
+
+
+        useEffect(() => {
+            getProducstFromDB();
+     // eslint-disable-next-line react-hooks/exhaustive-deps
+     }, [])
+
+     return (<section className='contenedor_instrumentos'>{product ? <>
+                   <div className='Producto'>
+                   <p className='txt_producto'>{product.Marca} {product.Modelo}</p>
+                   <img src={product.Imagen} alt="Guitarra" className="Foto_instrumento" />
+                   <p>{product.descripcion}</p>
+                   <p className='txt_producto'>{product.Precio}</p>
+                   <Counter Quantity={product.Quantity} />
+
+                    </div> 
+            
+     </> : <div>
+                   <img src={Loading} alt="Cargando..." />
+                   <p className='txt_cargando'>Cargando</p>
+            </div>
+     }</section>
+     )
 }
 export default Detail;

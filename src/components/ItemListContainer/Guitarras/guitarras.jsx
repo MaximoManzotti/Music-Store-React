@@ -1,18 +1,15 @@
 import '../../ItemListContainer/style_Instrumentos.css';
-// import Imagen_Fender from '../../assets/Guitarra.jpg';
-// import Imagen_Epiphone from '../../assets/epiphone.jpg';
-// import Imagen_Telecaster from '../../assets/telecaster.jpg';
 import Counter from '../../Counter/counter';
-import Loading from '../../assets/loading.gif'
-import React, { useState, useEffect} from 'react'
+import Loading from '../../assets/loading.gif';
+import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
-import Instrumentos from '../ProductList/productlist'
+import Instrumentos from '../ProductList/productlist';
 
 function Guitarras() {
        const [items, setItems] = useState([]);
      
        let lista = Instrumentos.filter(guitarra => guitarra.categoria === 'Guitarra')
-       console.log(lista)
+     
  
        const getProducts = new Promise((resolve, reject) => {
               setTimeout(() => {
