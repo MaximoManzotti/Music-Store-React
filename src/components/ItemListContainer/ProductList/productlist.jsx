@@ -47,7 +47,7 @@ const Instrumentos = [
         Modelo: 'Madera y Negro',
         Imagen: Bateria_Spears,
         descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eaque tempora quia natus dicta architecto, quibusdam nisi quos sunt non repellat iusto necessitatibus laudantium voluptatem vel dolorum fuga porro reprehenderit.',
-        Precio: '$50000',
+        Precio: '$90000',
         Quantity: 3
     },
     {
@@ -57,7 +57,7 @@ const Instrumentos = [
         Modelo: 'Doble, Madera y Negro',
         Imagen: Bateria_Pdp,
         descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eaque tempora quia natus dicta architecto, quibusdam nisi quos sunt non repellat iusto necessitatibus laudantium voluptatem vel dolorum fuga porro reprehenderit.',
-        Precio: '$50000',
+        Precio: '$80000',
         Quantity: 7
     },
     {
@@ -67,7 +67,7 @@ const Instrumentos = [
         Modelo: 'Comic',
         Imagen: Bateria_Ludivig,
         descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eaque tempora quia natus dicta architecto, quibusdam nisi quos sunt non repellat iusto necessitatibus laudantium voluptatem vel dolorum fuga porro reprehenderit.',
-        Precio: '$50000',
+        Precio: '$100000',
         Quantity: 9
     }, {
         id: 7,
@@ -76,7 +76,7 @@ const Instrumentos = [
         Modelo: 'Stratocaster',
         Imagen: Bajo_Fender,
         descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eaque tempora quia natus dicta architecto, quibusdam nisi quos sunt non repellat iusto necessitatibus laudantium voluptatem vel dolorum fuga porro reprehenderit.',
-        Precio: '$50000',
+        Precio: '$40000',
         Quantity: 3
     },
     {
@@ -86,7 +86,7 @@ const Instrumentos = [
         Modelo: 'Paul McCartney',
         Imagen: Bajo_Hofner,
         descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eaque tempora quia natus dicta architecto, quibusdam nisi quos sunt non repellat iusto necessitatibus laudantium voluptatem vel dolorum fuga porro reprehenderit.',
-        Precio: '$50000',
+        Precio: '$60000',
         Quantity: 7
     },
     {
@@ -96,7 +96,7 @@ const Instrumentos = [
         Modelo: 'Strastocaster',
         Imagen: Bajo_Squier,
         descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eaque tempora quia natus dicta architecto, quibusdam nisi quos sunt non repellat iusto necessitatibus laudantium voluptatem vel dolorum fuga porro reprehenderit.',
-        Precio: '$50000',
+        Precio: '$80000',
         Quantity: 3
     },
     {
@@ -106,7 +106,7 @@ const Instrumentos = [
         Modelo: 'Pedales',
         Imagen: Kit_Pedales,
         descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eaque tempora quia natus dicta architecto, quibusdam nisi quos sunt non repellat iusto necessitatibus laudantium voluptatem vel dolorum fuga porro reprehenderit.',
-        Precio: '$50000',
+        Precio: '$20000',
         Quantity: 3
     },
     {
@@ -116,7 +116,7 @@ const Instrumentos = [
         Modelo: 'Correa',
         Imagen: CorreaAnimalPrint,
         descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eaque tempora quia natus dicta architecto, quibusdam nisi quos sunt non repellat iusto necessitatibus laudantium voluptatem vel dolorum fuga porro reprehenderit.',
-        Precio: '$50000',
+        Precio: '$1000',
         Quantity: 7
     },
     {
@@ -126,7 +126,7 @@ const Instrumentos = [
         Modelo: 'Correa',
         Imagen: CorreaPatronAzul,
         descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eaque tempora quia natus dicta architecto, quibusdam nisi quos sunt non repellat iusto necessitatibus laudantium voluptatem vel dolorum fuga porro reprehenderit.',
-        Precio: '$50000',
+        Precio: '$1000',
         Quantity: 9
     },];
 
