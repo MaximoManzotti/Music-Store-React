@@ -1,44 +1,16 @@
 import '../../ItemListContainer/style_Instrumentos.css';
-import Kit_Pedales from '../../assets/kit_pedales.jpg';
-import CorreaAnimalPrint from '../../assets/Correa_Animal_Print.jpg'
-import CorreaPatronAzul from '../../assets/Correa_Patron_Azul.jpg'
 import Counter from '../../Counter/counter';
 import Loading from '../../assets/loading.gif'
 import React, { useState, useEffect} from 'react'
+import Instrumentos from '../ProductList/productlist'
 import { Link } from 'react-router-dom';
 function Bajos() {
        const [items, setItems] = useState([]);
-       const Accesorios = [
-              {
-                     id: 1,
-                     Marca: 'Varios',
-                     Modelo: 'Pedales',
-                     Imagen: Kit_Pedales,
-                     descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eaque tempora quia natus dicta architecto, quibusdam nisi quos sunt non repellat iusto necessitatibus laudantium voluptatem vel dolorum fuga porro reprehenderit.' ,
-                     Precio: '$50000',
-                     Quantity: 3
-              },
-              {
-                id: 2,
-                Marca: 'Strap',
-                Modelo: 'Correa',
-                Imagen: CorreaAnimalPrint,
-                descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eaque tempora quia natus dicta architecto, quibusdam nisi quos sunt non repellat iusto necessitatibus laudantium voluptatem vel dolorum fuga porro reprehenderit.' ,
-                Precio: '$50000',
-                Quantity: 7
-         },
-         {
-            id: 3,
-            Marca: 'Strap',
-            Modelo: 'Correa',
-            Imagen: CorreaPatronAzul,
-            descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eaque tempora quia natus dicta architecto, quibusdam nisi quos sunt non repellat iusto necessitatibus laudantium voluptatem vel dolorum fuga porro reprehenderit.' ,
-            Precio: '$50000',
-            Quantity: 9
-     },];
+       let lista = Instrumentos.filter(guitarra => guitarra.categoria === 'Accesorios')
+       
        const getProducts = new Promise((resolve, reject) => {
               setTimeout(() => {
-                     resolve(Accesorios);
+                     resolve(lista);
               },4000)
        })
        const getProducstFromDB = async () => {

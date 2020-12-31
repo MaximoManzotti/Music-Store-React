@@ -1,44 +1,17 @@
 import '../../ItemListContainer/style_Instrumentos.css';
-import Bajo_Fender from '../../assets/BajoFender.jpg';
-import Bajo_Hofner from '../../assets/Hofner.jpg';
-import Bajo_Squier from '../../assets/BajoSquier.jpg'
 import Counter from '../../Counter/counter';
 import Loading from '../../assets/loading.gif'
 import React, { useState, useEffect} from 'react'
+import Instrumentos from '../ProductList/productlist'
+
 import { Link } from 'react-router-dom';
 function Bajos() {
        const [items, setItems] = useState([]);
-       const Bajos = [
-              {
-                     id: 1,
-                     Marca: 'Fender',
-                     Modelo: 'Stratocaster',
-                     Imagen: Bajo_Fender,
-                     descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eaque tempora quia natus dicta architecto, quibusdam nisi quos sunt non repellat iusto necessitatibus laudantium voluptatem vel dolorum fuga porro reprehenderit.' ,
-                     Precio: '$50000',
-                     Quantity: 3
-              },
-              {
-                id: 2,
-                Marca: 'Hofner',
-                Modelo: 'Paul McCartney',
-                Imagen: Bajo_Hofner,
-                descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eaque tempora quia natus dicta architecto, quibusdam nisi quos sunt non repellat iusto necessitatibus laudantium voluptatem vel dolorum fuga porro reprehenderit.' ,
-                Precio: '$50000',
-                Quantity: 7
-         },
-         {
-            id: 3,
-            Marca: 'Squier',
-            Modelo: 'Strastocaster',
-            Imagen: Bajo_Squier,
-            descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eaque tempora quia natus dicta architecto, quibusdam nisi quos sunt non repellat iusto necessitatibus laudantium voluptatem vel dolorum fuga porro reprehenderit.' ,
-            Precio: '$50000',
-            Quantity: 3
-     },];
+       let lista = Instrumentos.filter(guitarra => guitarra.categoria === 'Bajos')
+   
        const getProducts = new Promise((resolve, reject) => {
               setTimeout(() => {
-                     resolve(Bajos);
+                     resolve(lista);
               },4000)
        })
        const getProducstFromDB = async () => {

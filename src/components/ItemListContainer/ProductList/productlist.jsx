@@ -7,7 +7,7 @@ import Bateria_Ludivig from '../../assets/Bateria_Comic.jpg';
 import Bajo_Fender from '../../assets/BajoFender.jpg';
 import Bajo_Hofner from '../../assets/Hofner.jpg';
 import Bajo_Squier from '../../assets/BajoSquier.jpg';
-import Kit_Pedales from '../../assets/kit_pedales.jpg';
+import Kit_Pedales from '../../assets/kit_pedales.jpg'
 import CorreaAnimalPrint from '../../assets/Correa_Animal_Print.jpg';
 import CorreaPatronAzul from '../../assets/Correa_Patron_Azul.jpg';
 
@@ -42,6 +42,7 @@ const Instrumentos = [
         Quantity: 4
     }, {
         id: 4,
+        categoria: 'Bateria',
         Marca: 'Spears',
         Modelo: 'Madera y Negro',
         Imagen: Bateria_Spears,
@@ -51,6 +52,7 @@ const Instrumentos = [
     },
     {
         id: 5,
+        categoria: 'Bateria',
         Marca: 'PDP',
         Modelo: 'Doble, Madera y Negro',
         Imagen: Bateria_Pdp,
@@ -60,6 +62,7 @@ const Instrumentos = [
     },
     {
         id: 6,
+        categoria: 'Bateria',
         Marca: 'Ludivig',
         Modelo: 'Comic',
         Imagen: Bateria_Ludivig,
@@ -68,6 +71,7 @@ const Instrumentos = [
         Quantity: 9
     }, {
         id: 7,
+        categoria: 'Bajos',
         Marca: 'Fender',
         Modelo: 'Stratocaster',
         Imagen: Bajo_Fender,
@@ -77,6 +81,7 @@ const Instrumentos = [
     },
     {
         id: 8,
+        categoria: 'Bajos',
         Marca: 'Hofner',
         Modelo: 'Paul McCartney',
         Imagen: Bajo_Hofner,
@@ -86,6 +91,7 @@ const Instrumentos = [
     },
     {
         id: 9,
+        categoria: 'Bajos',
         Marca: 'Squier',
         Modelo: 'Strastocaster',
         Imagen: Bajo_Squier,
@@ -95,6 +101,7 @@ const Instrumentos = [
     },
     {
         id: 10,
+        categoria: 'Accesorios',
         Marca: 'Varios',
         Modelo: 'Pedales',
         Imagen: Kit_Pedales,
@@ -104,6 +111,7 @@ const Instrumentos = [
     },
     {
         id: 11,
+        categoria: 'Accesorios',
         Marca: 'Strap',
         Modelo: 'Correa',
         Imagen: CorreaAnimalPrint,
@@ -113,6 +121,7 @@ const Instrumentos = [
     },
     {
         id: 12,
+        categoria: 'Accesorios',
         Marca: 'Strap',
         Modelo: 'Correa',
         Imagen: CorreaPatronAzul,

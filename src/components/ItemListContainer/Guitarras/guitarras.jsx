@@ -1,7 +1,7 @@
 import '../../ItemListContainer/style_Instrumentos.css';
-import Imagen_Fender from '../../assets/Guitarra.jpg';
-import Imagen_Epiphone from '../../assets/epiphone.jpg';
-import Imagen_Telecaster from '../../assets/telecaster.jpg';
+// import Imagen_Fender from '../../assets/Guitarra.jpg';
+// import Imagen_Epiphone from '../../assets/epiphone.jpg';
+// import Imagen_Telecaster from '../../assets/telecaster.jpg';
 import Counter from '../../Counter/counter';
 import Loading from '../../assets/loading.gif'
 import React, { useState, useEffect} from 'react'
@@ -9,45 +9,14 @@ import { Link } from 'react-router-dom';
 import Instrumentos from '../ProductList/productlist'
 
 function Guitarras() {
-       function prueba(){
-              // Instrumentos.filter(guitarra => guitarra === guitarra.categoria)
-       console.log(Instrumentos.filter(guitarra => guitarra === Instrumentos.categoria))}
-       prueba()
-
        const [items, setItems] = useState([]);
-
-
-
-       const Guitarras = [
-              {
-                     id: 1,
-                     Marca: 'Fender',
-                     Modelo: 'Stratocaster',
-                     Imagen: Imagen_Fender,
-                     descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eaque tempora quia natus dicta architecto, quibusdam nisi quos sunt non repellat iusto necessitatibus laudantium voluptatem vel dolorum fuga porro reprehenderit.' ,
-                     Precio: '$90000',
-                     Quantity: 7
-              },
-              {
-                     id: 2,
-                     Marca: 'Epiphone',
-                     Modelo: 'Casino',
-                     Imagen: Imagen_Epiphone,
-                     descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eaque tempora quia natus dicta architecto, quibusdam nisi quos sunt non repellat iusto necessitatibus laudantium voluptatem vel dolorum fuga porro reprehenderit.' ,
-                     Precio: '$80000',
-                     Quantity: 10
-              }, {
-                     id: 3,
-                     Marca: 'Fender',
-                     Modelo: 'Telecaster',
-                     Imagen: Imagen_Telecaster,
-                     descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eaque tempora quia natus dicta architecto, quibusdam nisi quos sunt non repellat iusto necessitatibus laudantium voluptatem vel dolorum fuga porro reprehenderit.' ,
-                     Precio: '$60000',
-                     Quantity: 4
-              }];
+     
+       let lista = Instrumentos.filter(guitarra => guitarra.categoria === 'Guitarra')
+       console.log(lista)
+ 
        const getProducts = new Promise((resolve, reject) => {
               setTimeout(() => {
-                     resolve(Guitarras);
+                     resolve(lista);
               },4000)
        })
        const getProducstFromDB = async () => {
