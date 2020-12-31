@@ -1,19 +1,19 @@
 import '../../ItemListContainer/style_Instrumentos.css';
 import Loading from '../../assets/loading.gif';
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Instrumentos from '../ProductList/productlist';
 
 function Guitarras() {
        const [items, setItems] = useState([]);
-     
+
        let lista = Instrumentos.filter(guitarra => guitarra.categoria === 'Guitarra')
-     
- 
+
+
        const getProducts = new Promise((resolve, reject) => {
               setTimeout(() => {
                      resolve(lista);
-              },4000)
+              }, 4000)
        })
        const getProducstFromDB = async () => {
               try {
@@ -25,16 +25,19 @@ function Guitarras() {
        }
        useEffect(() => {
               getProducstFromDB();
-       // eslint-disable-next-line react-hooks/exhaustive-deps
+              // eslint-disable-next-line react-hooks/exhaustive-deps
        }, [])
        return (<section className='contenedor_instrumentos'>{items.length ? <>
-              {(items.map(u =>  
-                     <div className='Producto' key={u.id}>
-                     <p className='txt_producto'>{u.Marca} {u.Modelo}</p>
-                     <img src={u.Imagen} alt="Guitarra" className="Foto_instrumento" />
-                     <p className='txt_producto'>{u.Precio}</p>
-                      <Link to={`/category/guitarras/${u.id}`} className='VerMas'>Ver Mas</Link>
-                      </div> 
+              {(items.map(u =>
+              
+                     <Link to={`/category/guitarras/${u.id}`} className='VerMas'>
+                            <div className='Producto' key={u.id}>
+                                   <p className='txt_producto'>{u.Marca} {u.Modelo}</p>
+                                   <img src={u.Imagen} alt="Guitarra" className="Foto_instrumento" />
+                                   <p className='txt_producto'>{u.Precio}</p>
+                            </div>
+                    </Link>
+
               ))}
        </> : <div>
                      <img src={Loading} alt="Cargando..." />

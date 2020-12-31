@@ -24,6 +24,10 @@ div .Producto {
     z-index: -1;
 }
 
+div .Producto:hover {
+    box-shadow: 0 0 1rem 0 rgb(84, 0, 105);
+}
+
 .txt_producto {
     justify-content: center;
     display: flex;
@@ -57,11 +61,6 @@ div .Producto {
 }
 
 .VerMas {
-    justify-content: center;
-    display: flex;
     text-decoration: none;
-    color: #dfc298;
-    background-color: black;
-    height: 1.3em;
-    padding-top: 0.4em;
+    color: black;
 }
