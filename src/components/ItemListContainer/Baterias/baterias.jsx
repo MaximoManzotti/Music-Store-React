@@ -7,7 +7,7 @@ import Instrumentos from '../ProductList/productlist';
 
 function Bajos() {
 
-       let lista = Instrumentos.filter(guitarra => guitarra.categoria === 'Baterias')
+       let lista = Instrumentos.filter(bateria => bateria.categoria === 'Baterias')
        const [items, setItems] = useState([]);
       
        const getProducts = new Promise((resolve, reject) => {

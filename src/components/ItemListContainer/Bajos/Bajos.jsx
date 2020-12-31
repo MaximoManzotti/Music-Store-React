@@ -7,7 +7,7 @@ import Instrumentos from '../ProductList/productlist'
 import { Link } from 'react-router-dom';
 function Bajos() {
        const [items, setItems] = useState([]);
-       let lista = Instrumentos.filter(guitarra => guitarra.categoria === 'Bajos')
+       let lista = Instrumentos.filter(bajo => bajo.categoria === 'Bajos')
    
        const getProducts = new Promise((resolve, reject) => {
               setTimeout(() => {
