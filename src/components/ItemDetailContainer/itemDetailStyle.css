@@ -22,3 +22,25 @@
     display: flex;
     justify-content: center;
 }
+
+.contenedor_detail {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.contenedor_imagen {
+    display: flex;
+    width: 100%;
+    margin: 1em;
+}
+
+.Titulo_Producto {
+    display: flex;
+    justify-content: center;
+}
+
+.contador_detail {
+    display: flex;
+    justify-content: center;
+}

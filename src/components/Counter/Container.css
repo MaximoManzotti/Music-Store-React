@@ -1,8 +1,14 @@
+.count_container {
+    display: block;
+    width: 15em;
+}
+
 .Counter_Container {
     display: flex;
     justify-content: center;
     margin: 0px;
     justify-content: space-between;
+    width: 100%;
 }
 
 .Sumar {
@@ -29,16 +35,22 @@ p.Cantidad_Productos {
     display: flex;
     justify-content: center;
     margin: 0px;
+    width: 100%;
 }
 
 .agregar_al_carrito {
-    width: 20em;
-    height: 3em;
+    width: 100%;
+    height: 2em;
     background-color: #dfc298;
+    border: none;
+    color: black;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1em;
+    outline: none;
 }
 
-.count_container {
-    display: block;
+.agregar_al_carrito:hover {
+    background-color: #b39c7c;
 }
 
 
