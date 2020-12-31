@@ -38,11 +38,7 @@ const Detail = () => {
     return (<section >{product ? <>
         <div className='contenedor_detail'>
             <div className='contenedor_imagen'>
-                <img src={product.Imagen} alt="Guitarra" style={{
-                    width: '10em',
-                    border: 'solid',
-                    padding: '1em'
-                }} />
+                <img src={product.Imagen} alt="Guitarra" className='Imagen_Detail' />
             </div>
             <div >
                 <p className='Titulo_Producto'>{product.Marca} {product.Modelo}</p>

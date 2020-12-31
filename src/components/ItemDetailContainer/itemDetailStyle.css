@@ -44,3 +44,10 @@
     display: flex;
     justify-content: center;
 }
+
+.Imagen_Detail {
+    max-height: 20em;
+    max-width: 20em;
+    border: solid;
+    padding: 1em;
+}
