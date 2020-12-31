@@ -1,5 +1,4 @@
 import '../../ItemListContainer/style_Instrumentos.css';
-import Counter from '../../Counter/counter';
 import Loading from '../../assets/loading.gif';
 import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
@@ -34,7 +33,6 @@ function Guitarras() {
                      <p className='txt_producto'>{u.Marca} {u.Modelo}</p>
                      <img src={u.Imagen} alt="Guitarra" className="Foto_instrumento" />
                      <p className='txt_producto'>{u.Precio}</p>
-                     <Counter Quantity={u.Quantity} />
                       <Link to={`/category/guitarras/${u.id}`} className='VerMas'>Ver Mas</Link>
                       </div> 
               ))}

@@ -1,5 +1,5 @@
 import '../../ItemListContainer/style_Instrumentos.css';
-import Counter from '../../Counter/counter';
+
 import Loading from '../../assets/loading.gif'
 import React, { useState, useEffect} from 'react'
 import Instrumentos from '../ProductList/productlist'
@@ -32,7 +32,6 @@ function Bajos() {
                      <p className='txt_producto'>{u.Marca} {u.Modelo}</p>
                      <img src={u.Imagen} alt="Bajo" className="Foto_instrumento" />
                      <p className='txt_producto'>{u.Precio}</p>
-                     <Counter Quantity={u.Quantity} />
                       <Link to={`/category/bajos/${u.id}` } className='VerMas'>Ver Mas</Link>
                       </div> 
               ))}

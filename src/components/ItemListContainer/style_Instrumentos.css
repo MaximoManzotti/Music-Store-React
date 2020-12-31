@@ -61,4 +61,7 @@ div .Producto {
     display: flex;
     text-decoration: none;
     color: #dfc298;
+    background-color: black;
+    height: 1.3em;
+    padding-top: 0.4em;
 }
