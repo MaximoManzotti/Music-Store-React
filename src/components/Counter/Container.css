@@ -53,6 +53,11 @@ p.Cantidad_Productos {
     background-color: #b39c7c;
 }
 
+.count_display {
+    display: flex;
+    justify-content: center;
+}
+
 
 /* .Producto:hover .Foto_guitarra {
     padding: 1em;
