@@ -33,13 +33,20 @@ import Loading from '../assets/loading.gif'
      // eslint-disable-next-line react-hooks/exhaustive-deps
      }, [])
 
-     return (<section className='contenedor_instrumentos'>{product ? <>
-                   <div className='Producto'>
-                   <p className='txt_producto'>{product.Marca} {product.Modelo}</p>
-                   <img src={product.Imagen} alt="Guitarra" className="Foto_instrumento" />
-                   <p>{product.descripcion}</p>
-                   <p className='txt_producto'>{product.Precio}</p>
+     return (<section >{product ? <>
+                   <div >
+                   <p >{product.Marca} {product.Modelo}</p>
+                   <div style={{display: 'flex'}}>
+                   <img src={product.Imagen} alt="Guitarra" style={{width: '10em'}}/>
+                   <div >
+                   <p style={{justifyContent:'center', display:'flex'}}>{product.Precio}</p>
                    <Counter Quantity={product.Quantity} />
+                   </div>
+                   </div>
+               
+                   <p>{product.descripcion}</p>
+                 
+                   
 
                     </div> 
             
