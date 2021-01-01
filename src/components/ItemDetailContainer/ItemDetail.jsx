@@ -39,9 +39,9 @@ const Detail = () => {
             <div className='contenedor_imagen'>
                 <img src={product.Imagen} alt="Guitarra" className='Imagen_Detail' />
             </div>
-            <div >
+            <div className='div_producto' >
                 <p className='Titulo_Producto'>{product.Marca} {product.Modelo}</p>
-                <p>{product.descripcion}</p>
+                <p className='Descripcion_producto'>{product.descripcion}</p>
                 <p style={{ justifyContent: 'center', display: 'flex' }}>{product.Precio}</p>
                 <Counter Quantity={product.Quantity}/>
                

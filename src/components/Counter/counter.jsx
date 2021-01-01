@@ -1,5 +1,6 @@
 import './Container.css';
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import CountContainer from './countContainer';
 import '../ItemListContainer/Guitarras/guitarras';
 
@@ -31,7 +32,7 @@ function Contador({Quantity}) {
       <div className='count_container'>
         <p className='Cantidad_Productos'>Disponibilidad de Productos: {qty}</p>
         <CountContainer count={count} add={add} less={less} quantity={qty}/>
-        <button className='agregar_al_carrito'>agregar al Carrito</button>
+        <Link to='/cart'><button className='agregar_al_carrito'>Agregar al Carrito</button></Link>
       </div>
       </div>
       

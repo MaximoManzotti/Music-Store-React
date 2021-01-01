@@ -20,7 +20,7 @@ function CountContainer({ count, add, less, quantity}) {
         <button onClick={() => less()} disabled={count === 1 ? 'disabled' : null} className="Restar" >-</button>
         <p className='numero_producto'>{count}</p>
         <button onClick={() => add()} disabled={count === (qty.quantity - 0) ? 'disabled' : null} className="Sumar">+</button>
-
+    
       </div>
 
     </>

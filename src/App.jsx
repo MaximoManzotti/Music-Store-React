@@ -44,6 +44,9 @@ function App() {
         <Route exact path='/category/guitarras/:id?'>
           <Detail/>
         </Route>
+        <Route exact path='/cart'>
+          {/* <Cart/> */}
+        </Route>
       </Switch>
     </BrowserRouter>
     

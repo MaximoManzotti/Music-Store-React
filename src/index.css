@@ -67,6 +67,8 @@
             flex-direction: column;
             justify-content: center;
             width: 90%;
+            align-items: center;
+            text-align: justify;
         }
         .Imagen_Detail {
             border: solid;
@@ -81,6 +83,7 @@
         .Nombre_marca {
             color: white;
             margin: 4px;
+            width: min-content;
         }
     }
     /* version escritorio para abajo */

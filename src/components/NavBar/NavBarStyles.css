@@ -56,6 +56,7 @@ li{
     list-style: none;
     margin-top: 1em;
     padding: 0.5em;
+    text-align:center;
 }
 
 div.logo_menu {
@@ -70,6 +71,7 @@ div.logo_menu {
 .Nombre_marca {
     color: white;
     margin-left: 0.1em;
+    
 }
 
 .Nav_contenedor_Pc {

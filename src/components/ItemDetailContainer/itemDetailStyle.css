@@ -50,3 +50,11 @@
     border: solid;
     padding: 1em;
 }
+
+.div_producto {
+    width:70%;
+}
+
+.Descripcion_producto {
+    text-align: justify;
+}
