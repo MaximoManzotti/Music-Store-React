@@ -1,95 +1,117 @@
-@media screen and (max-width: 902px) {
+    @media screen and (max-width: 902px) {
+        header {
+            display: flex;
+            justify-content: space-between;
+        }
+        svg.Carrito {
+            margin: 1em;
+            font-size: 1em;
+        }
+        div.logo_menu {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+        .contenedor_instrumentos {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+            /* height: 28em; */
+        }
+        .Container_listContainer {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        .Nav_contenedor {
+            display: none;
+        }
+        .contenedor_bar {
+            margin: 0.7em 0.9em 0em 0em;
+            display: block !important;
+        }
+        .contenedor_bar_close {
+            display: none;
+        }
+        .bar_1 {
+            background-color: #dfc298;
+            color: transparent;
+            width: 2em;
+            margin-bottom: 0.3em;
+            height: 0.3em;
+            border-radius: 2em;
+        }
+        .bar_2 {
+            background-color: #dfc298;
+            color: transparent;
+            width: 2em;
+            margin-bottom: 0.3em;
+            height: 0.3em;
+            border-radius: 2em;
+        }
+        .bar_3 {
+            background-color: #dfc298;
+            width: 2em;
+            color: transparent;
+            margin-bottom: 0.3em;
+            height: 0.3em;
+            border-radius: 2em;
+        }
+        svg.Carrito {
+            margin: 12px;
+            margin-right: 1em;
+            font-size: 1.7em;
+        }
+        .contenedor_detail {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 90%;
+        }
+        .Imagen_Detail {
+            max-height: 100%;
+            max-width: 10.5em;
+            border: solid;
+            padding: 1em;
+        }
+        .contenedor_imagen {
+            display: flex;
+            width: 90%;
+            margin: 1em;
+        }
+    }
+    /* version escritorio para abajo */
+    
+    @media screen and (min-width: 767px) {
+        .contenedor_detail {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            flex-direction: row;
+        }
+    }
+    
+    body {
+        margin: 0;
+        background-color: rgb(36, 36, 36);
+        font-family: 'Bebas Neue', cursive;
+        font-size: 1.3em;
+        color: #dfc298;
+        background-size: cover;
+        /* background-image: url(./assets/Madera.jpg); */
+        background-attachment: fixed;
+    }
+    
     header {
-        display: flex;
-        justify-content: space-between;
+        background-color: black;
     }
-    svg.Carrito {
-        margin: 1em;
-        font-size: 1em;
-    }
-    div.logo_menu {
-        display: flex;
-        justify-content: space-between;
-        font-size: 14px;
-    }
-    .contenedor_instrumentos {
-        display: flex;
-        flex-wrap: wrap;
-        align-content: center;
-        justify-content: center;
-        /* height: 28em; */
-    }
-    .Container_listContainer {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
-    .Nav_contenedor {
-        display: none;
-    }
+    
     .contenedor_bar {
-        margin: 0.7em 0.9em 0em 0em;
-        display: block !important;
-    }
-    .contenedor_bar_close {
         display: none;
     }
-    .bar_1 {
-        background-color: #dfc298;
-        color: transparent;
-        width: 2em;
-        margin-bottom: 0.3em;
-        height: 0.3em;
-        border-radius: 2em;
+    
+    .titulo_instrumento {
+        display: flex;
+        justify-content: center;
     }
-    .bar_2 {
-        background-color: #dfc298;
-        color: transparent;
-        width: 2em;
-        margin-bottom: 0.3em;
-        height: 0.3em;
-        border-radius: 2em;
-    }
-    .bar_3 {
-        background-color: #dfc298;
-        width: 2em;
-        color: transparent;
-        margin-bottom: 0.3em;
-        height: 0.3em;
-        border-radius: 2em;
-    }
-    svg.Carrito {
-        margin: 12px;
-        margin-right: 1em;
-        font-size: 1.7em;
-    }
-}
-
-
-/* version escritorio para abajo */
-
-body {
-    margin: 0;
-    background-color: rgb(36, 36, 36);
-    font-family: 'Bebas Neue', cursive;
-    font-size: 1.3em;
-    color: #dfc298;
-    background-size: cover;
-    /* background-image: url(./assets/Madera.jpg); */
-    background-attachment: fixed;
-}
-
-header {
-    background-color: black;
-}
-
-
-
-.contenedor_bar {
-    display: none;
-}
-
-.titulo_instrumento {
-    display: flex;
-    justify-content: center;
-}

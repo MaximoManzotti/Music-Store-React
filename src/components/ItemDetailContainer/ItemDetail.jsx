@@ -44,7 +44,7 @@ const Detail = () => {
                 <p className='Titulo_Producto'>{product.Marca} {product.Modelo}</p>
                 <p>{product.descripcion}</p>
                 <p style={{ justifyContent: 'center', display: 'flex' }}>{product.Precio}</p>
-                <Counter Quantity={product.Quantity} />
+                <Counter Quantity={product.Quantity} id={id}/>
                
             </div>
 
