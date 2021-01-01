@@ -17,7 +17,6 @@
             flex-wrap: wrap;
             align-content: center;
             justify-content: center;
-            /* height: 28em; */
         }
         .Container_listContainer {
             display: flex;
@@ -70,15 +69,18 @@
             width: 90%;
         }
         .Imagen_Detail {
-            max-height: 100%;
-            max-width: 10.5em;
             border: solid;
             padding: 1em;
+            max-width: 10em;
         }
         .contenedor_imagen {
             display: flex;
-            width: 90%;
             margin: 1em;
+            width: min-content;
+        }
+        .Nombre_marca {
+            color: white;
+            margin: 4px;
         }
     }
     /* version escritorio para abajo */
@@ -99,7 +101,6 @@
         font-size: 1.3em;
         color: #dfc298;
         background-size: cover;
-        /* background-image: url(./assets/Madera.jpg); */
         background-attachment: fixed;
     }
     

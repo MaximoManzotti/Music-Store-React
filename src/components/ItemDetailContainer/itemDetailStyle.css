@@ -31,7 +31,7 @@
 
 .contenedor_imagen {
     display: flex;
-    width: 100%;
+    width: min-content;
     margin: 1em;
 }
 
@@ -46,8 +46,7 @@
 }
 
 .Imagen_Detail {
-    max-height: 20em;
-    max-width: 20em;
+    max-width: 10em;
     border: solid;
     padding: 1em;
 }

@@ -17,7 +17,6 @@ const Detail = () => {
         const lista = Instrumentos.filter(detalle => detalle.id === Number(id))
         const lista_resuelta = lista[0]
         resolve(lista_resuelta)
-        console.log(product.Quantity)
     });
 
     const getProducstFromDB = async () => {
@@ -44,7 +43,7 @@ const Detail = () => {
                 <p className='Titulo_Producto'>{product.Marca} {product.Modelo}</p>
                 <p>{product.descripcion}</p>
                 <p style={{ justifyContent: 'center', display: 'flex' }}>{product.Precio}</p>
-                <Counter Quantity={product.Quantity} id={id}/>
+                <Counter Quantity={product.Quantity}/>
                
             </div>
 

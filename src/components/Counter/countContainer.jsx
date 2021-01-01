@@ -1,16 +1,16 @@
 import './Container.css';
 import './counter';
 import React from "react";
-import {useParams} from 'react-router-dom';
-import Instrumentos from '../ItemListContainer/ProductList/productlist';
+// import {useParams} from 'react-router-dom';
+// import Instrumentos from '../ItemListContainer/ProductList/productlist';
 
 
 function CountContainer({ count, add, less, quantity}) {
-  const { id } = useParams();
+  // const { id } = useParams();
 //  const [useProduct, setProduct] = useState()
-console.log(id)
- let lista = Instrumentos.filter(guitarra => guitarra.id === Number(id));
-  console.log(lista)
+// console.log(id)
+//  let lista = Instrumentos.filter(guitarra => guitarra.id === Number(id));
+//   console.log(lista)
   var qty = { quantity }
   return (
 
