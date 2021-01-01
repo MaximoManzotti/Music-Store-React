@@ -23,26 +23,17 @@ function App() {
       <Route exact path="/category/accesorios">
         <Accesorios/>
         </Route>
-        <Route exact path="/category/accesorios/:id?">
+        <Route exact path="/items/:id?">
         <Detail/>
         </Route>
       <Route exact path="/category/baterias">
         <Baterias/>
-        </Route>
-        <Route exact path='/category/baterias/:id?'>
-          <Detail/>
         </Route>
       <Route exact path="/category/bajos">
         <Bajos/>
         </Route>
         <Route exact path="/category/guitarras">
         <Guitarra/>
-        </Route>
-        <Route exact path='/category/Bajos/:id?'>
-          <Detail/>
-        </Route>
-        <Route exact path='/category/guitarras/:id?'>
-          <Detail/>
         </Route>
         <Route exact path='/cart'>
           {/* <Cart/> */}

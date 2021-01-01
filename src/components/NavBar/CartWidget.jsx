@@ -4,11 +4,6 @@ import ItemListContainer from '../ItemListContainer/ItemListContainer';
 
 
 function Carrito() {
-
-
-  
- 
-
   return(<> <CgShoppingCart className='Carrito'/>
   <ItemListContainer/> </>)};
 

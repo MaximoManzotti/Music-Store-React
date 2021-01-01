@@ -28,7 +28,7 @@ function Bajos() {
        }, [])
        return (<section className='contenedor_instrumentos'>{items.length ? <>
               {(items.map(u =>
-                     <Link to={`/category/baterias/${u.id}`} className='VerMas'>
+                     <Link to={`/items/${u.id}`} className='VerMas'>
                             <div className='Producto' key={u.id}>
                                    <p className='txt_producto'>{u.Marca} {u.Modelo}</p>
                                    <img src={u.Imagen} alt="Bajo" className="Foto_instrumento" />
