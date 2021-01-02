@@ -6,31 +6,31 @@ import Instrumentos from '../ProductList/productlist';
 
 function Instrumento() {
 
-     const [items, setItems] = useState([]);
+     const [items, setItems] = useState([0]);
      const { instrumentos } = useParams() ;
 
     useEffect(() => {
               getProducstFromDB();
-
               // eslint-disable-next-line react-hooks/exhaustive-deps
        }, [instrumentos])
-const lista = Instrumentos.filter(e => e.categoria === instrumentos)
+
+      const lista = Instrumentos.filter(e => e.categoria === instrumentos)
 
        const getProducts = new Promise((resolve, reject) => {
-              setTimeout(() => {
                      resolve(lista);
-              }, 4000)
        })
        const getProducstFromDB = async () => {
               try {
                      const result = await getProducts;
+                
                      setItems(result);
+                    
               } catch (error) {
                      alert('No podemos mostrar los productos en este momento');
               }
        }
-   
-       return (<section className='contenedor_instrumentos'>{items.length ? <>
+
+       return (<section className='contenedor_instrumentos'>{ lista.length > 0 ? <>
               {(items.map(u =>
               
                      <Link to={`/items/${u.id}`} className='VerMas'>
