@@ -1,14 +1,20 @@
 import '../../ItemListContainer/style_Instrumentos.css';
 import Loading from '../../assets/loading.gif';
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams} from 'react-router-dom';
 import Instrumentos from '../ProductList/productlist';
 
-function Guitarras() {
-       const [items, setItems] = useState([]);
+function Instrumento() {
 
-       let lista = Instrumentos.filter(guitarra => guitarra.categoria === 'Guitarra')
+     const [items, setItems] = useState([]);
+     const { instrumentos } = useParams() ;
 
+    useEffect(() => {
+              getProducstFromDB();
+
+              // eslint-disable-next-line react-hooks/exhaustive-deps
+       }, [instrumentos])
+const lista = Instrumentos.filter(e => e.categoria === instrumentos)
 
        const getProducts = new Promise((resolve, reject) => {
               setTimeout(() => {
@@ -23,10 +29,7 @@ function Guitarras() {
                      alert('No podemos mostrar los productos en este momento');
               }
        }
-       useEffect(() => {
-              getProducstFromDB();
-              // eslint-disable-next-line react-hooks/exhaustive-deps
-       }, [])
+   
        return (<section className='contenedor_instrumentos'>{items.length ? <>
               {(items.map(u =>
               
@@ -46,4 +49,4 @@ function Guitarras() {
        }</section>
        )
 }
-export default Guitarras
+export default Instrumento

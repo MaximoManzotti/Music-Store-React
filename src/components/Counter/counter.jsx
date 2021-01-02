@@ -2,7 +2,7 @@ import './Container.css';
 import React, {useState} from 'react';
 import { Redirect } from 'react-router-dom';
 import CountContainer from './countContainer';
-import '../ItemListContainer/Guitarras/guitarras';
+// import '../ItemListContainer/Guitarras/guitarras';
 
 function Contador({Quantity}) {
     const [count, setCount] = useState(1);

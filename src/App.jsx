@@ -1,8 +1,5 @@
 import NavBarPhone from './components/NavBar/NavBarPhone';
-import Guitarra from './components/ItemListContainer/Guitarras/guitarras';
-import Bajos from './components/ItemListContainer/Bajos/Bajos'
-import Baterias from './components/ItemListContainer/Baterias/baterias'
-import Accesorios from './components/ItemListContainer/Accesorios/accesorios'
+import Instrumentos from './components/ItemListContainer/Instrumentos/instrumentos'
 import NavBar from './components/NavBar/NavBar'
 import Detail from './components/ItemDetailContainer/ItemDetail';
 import {BrowserRouter, Switch, Route } from 'react-router-dom'
@@ -18,25 +15,15 @@ function App() {
         <NavBar />
         <NavBarPhone/>
           </header>
-
       <Switch>
-      <Route exact path="/category/accesorios">
-        <Accesorios/>
+       <Route exact path="/category/:instrumentos?">
+        <Instrumentos/>
         </Route>
-        <Route exact path="/items/:id?">
+{/* <Route exact path='/cart'>
+           <Cart/> 
+        </Route> */}
+         <Route exact path="/items/:id?">
         <Detail/>
-        </Route>
-      <Route exact path="/category/baterias">
-        <Baterias/>
-        </Route>
-      <Route exact path="/category/bajos">
-        <Bajos/>
-        </Route>
-        <Route exact path="/category/guitarras">
-        <Guitarra/>
-        </Route>
-        <Route exact path='/cart'>
-          {/* <Cart/> */}
         </Route>
       </Switch>
     </BrowserRouter>

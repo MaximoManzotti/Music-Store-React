@@ -14,7 +14,7 @@ import CorreaPatronAzul from '../../assets/Correa_Patron_Azul.jpg';
 const Instrumentos = [
     {
         id: 1,
-        categoria: 'Guitarra',
+        categoria: 'guitarras',
         Marca: 'Fender',
         Modelo: 'Stratocaster',
         Imagen: Imagen_Fender,
@@ -24,7 +24,7 @@ const Instrumentos = [
     },
     {
         id: 2,
-        categoria: 'Guitarra',
+        categoria: 'guitarras',
         Marca: 'Epiphone',
         Modelo: 'Casino',
         Imagen: Imagen_Epiphone,
@@ -33,7 +33,7 @@ const Instrumentos = [
         Quantity: 10
     }, {
         id: 3,
-        categoria: 'Guitarra',
+        categoria: 'guitarras',
         Marca: 'Fender',
         Modelo: 'Telecaster',
         Imagen: Imagen_Telecaster,
@@ -42,7 +42,7 @@ const Instrumentos = [
         Quantity: 4
     }, {
         id: 4,
-        categoria: 'Bateria',
+        categoria: 'baterias',
         Marca: 'Spears',
         Modelo: 'Madera y Negro',
         Imagen: Bateria_Spears,
@@ -52,7 +52,7 @@ const Instrumentos = [
     },
     {
         id: 5,
-        categoria: 'Bateria',
+        categoria: 'baterias',
         Marca: 'PDP',
         Modelo: 'Doble, Madera y Negro',
         Imagen: Bateria_Pdp,
@@ -62,7 +62,7 @@ const Instrumentos = [
     },
     {
         id: 6,
-        categoria: 'Bateria',
+        categoria: 'baterias',
         Marca: 'Ludivig',
         Modelo: 'Comic',
         Imagen: Bateria_Ludivig,
@@ -71,7 +71,7 @@ const Instrumentos = [
         Quantity: 9
     }, {
         id: 7,
-        categoria: 'Bajos',
+        categoria: 'bajos',
         Marca: 'Fender',
         Modelo: 'Stratocaster',
         Imagen: Bajo_Fender,
@@ -81,7 +81,7 @@ const Instrumentos = [
     },
     {
         id: 8,
-        categoria: 'Bajos',
+        categoria: 'bajos',
         Marca: 'Hofner',
         Modelo: 'Paul McCartney',
         Imagen: Bajo_Hofner,
@@ -91,7 +91,7 @@ const Instrumentos = [
     },
     {
         id: 9,
-        categoria: 'Bajos',
+        categoria: 'bajos',
         Marca: 'Squier',
         Modelo: 'Strastocaster',
         Imagen: Bajo_Squier,
@@ -101,7 +101,7 @@ const Instrumentos = [
     },
     {
         id: 10,
-        categoria: 'Accesorios',
+        categoria: 'accesorios',
         Marca: 'Varios',
         Modelo: 'Pedales',
         Imagen: Kit_Pedales,
@@ -111,7 +111,7 @@ const Instrumentos = [
     },
     {
         id: 11,
-        categoria: 'Accesorios',
+        categoria: 'accesorios',
         Marca: 'Strap',
         Modelo: 'Correa',
         Imagen: CorreaAnimalPrint,
@@ -121,7 +121,7 @@ const Instrumentos = [
     },
     {
         id: 12,
-        categoria: 'Accesorios',
+        categoria: 'accesorios',
         Marca: 'Strap',
         Modelo: 'Correa',
         Imagen: CorreaPatronAzul,
