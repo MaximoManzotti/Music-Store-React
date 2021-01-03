@@ -27,6 +27,7 @@
 .Menu {
     text-decoration: none;
     color: #dfc298;
+
 }
 
 .Menu:hover {
@@ -89,13 +90,15 @@ div.logo_menu {
 }
 
 .Ul_Phone {
-    display: flex;
+     display: flex;
     flex-direction: column;
     justify-content: center;
     position: absolute;
     background-color: black;
     right: 0em;
-    top: 40px;
+    top: 59px;
     z-index: 2;
+    border-radius: 1em;
     padding-left: 0px;
+    width: 100%;
 }

@@ -85,6 +85,9 @@
             margin: 4px;
             width: min-content;
         }
+        a.Menu{
+            font-size:2em;
+        }
     }
     /* version escritorio para abajo */
     

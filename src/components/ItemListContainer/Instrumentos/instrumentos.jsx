@@ -11,7 +11,6 @@ function Instrumento() {
      
          useEffect(() => {
               getProducstFromDB();
-              setItems([])
               // eslint-disable-next-line react-hooks/exhaustive-deps
        }, [instrumentos])
 

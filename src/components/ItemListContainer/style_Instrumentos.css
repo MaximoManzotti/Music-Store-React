@@ -27,6 +27,10 @@ div .Producto {
 div .Producto:hover {
     box-shadow: 0 0 1rem 0 rgb(84, 0, 105);
 }
+div .Producto:focus { 
+    outline-color: transparent; 
+    outline-style: none;
+}
 
 .txt_producto {
     justify-content: center;
