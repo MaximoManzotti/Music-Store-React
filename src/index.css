@@ -57,6 +57,36 @@
             height: 0.3em;
             border-radius: 2em;
         }
+        .x_1{
+               background-color: #dfc298;
+            color: transparent;
+            width: 2em;
+            margin-bottom: 0.3em;
+            height: 0.3em;
+            border-radius: 2em;
+            transform:rotate(140deg);
+            position: relative;
+            top: 0.6em;
+        }
+         .x_2{
+                background-color: transparent;
+            color: transparent;
+            width: 2em;
+            margin-bottom: 0.3em;
+            height: 0.3em;
+            border-radius: 2em;
+        }
+         .x_3{
+              background-color: #dfc298;
+            width: 2em;
+            color: transparent;
+            margin-bottom: 0.3em;
+            height: 0.3em;
+            border-radius: 2em;
+            transform:rotate(-140deg);
+           position: relative;
+           bottom: 0.6em;
+        }
         svg.Carrito {
             margin: 12px;
             margin-right: 1em;
