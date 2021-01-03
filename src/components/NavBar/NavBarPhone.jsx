@@ -8,6 +8,7 @@ function NavPhone() {
     const openshowMenu = () => {
         setshowMenu(!showMenu);
         barsMenu()
+        
     }
 
     const [barMenu, setBarMenu] = useState(true);
@@ -20,7 +21,7 @@ function NavPhone() {
             <div className='Menu_Phone'>
                 <IconoCarrito/>
                 <div className='contenedor_bar'  onClick={openshowMenu} >
-                    <div  className={barMenu ? 'bar_1'  : 'x_1' }>.</div>
+                    <div  className={barMenu ? 'bar_1'  :'x_1' }>.</div>
                     <div  className={barMenu ? 'bar_2'  :'x_2' }>.</div>
                     <div  className={barMenu ? 'bar_3'  :'x_3' }>.</div>
                     </div>
