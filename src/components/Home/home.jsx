@@ -10,7 +10,7 @@ return(
        <div className='home'>
       <div className='txt_home'>
         <h1 className='titulo_home'>BAT MUSIC STORE</h1>
-        <p className='parrafo_home'>Fell The Power In Your Veins</p>
+        <p className='parrafo_home'>Feel The Power In Your Veins</p>
         </div>
         <div className='categoria'>
         <div className='Icono_categoria'><FaGuitar style={{fontSize: '3em'}}/><p>GUITARRAS</p></div>
