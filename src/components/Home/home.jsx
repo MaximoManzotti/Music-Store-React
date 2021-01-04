@@ -12,13 +12,14 @@ return(
         <h1 className='titulo_home'>BAT MUSIC STORE</h1>
         <p className='parrafo_home'>Feel The Power In Your Veins</p>
         </div>
+        <h1>CATEGORIAS</h1>
         <div className='categoria'>
         <div className='Icono_categoria'><FaGuitar style={{fontSize: '3em'}}/><p>GUITARRAS</p></div>
         <div className='Icono_categoria'><GiGuitarBassHead style={{fontSize: '3em'}}/> <p>BAJOS</p></div>
         <div className='Icono_categoria'><FaDrum style={{fontSize: '3em'}}/> <p>BATERIAS</p></div>
         <div className='Icono_categoria'><GiPartyHat style={{fontSize: '3em'}}/> <p>ACCESORIOS</p></div>
         </div>
-
+        <h1>PRODUCTOS</h1>
         <Productos/>
        </div>
 
