@@ -33,18 +33,17 @@
         .contenedor_bar_close {
             display: none;
         }
-        .bar_1:after{
-              
-               background-color: #dfc298;
+        .bar_1:after {
+            background-color: #dfc298;
             color: transparent;
             width: 2em;
             margin-bottom: 0.3em;
             height: 0.3em;
             border-radius: 2em;
-            transform:rotate(140deg);
+            transform: rotate(-140deg);
             position: relative;
             top: 0.6em;
-         }
+        }
         .bar_1 {
             transition-duration: 2s;
             background-color: #dfc298;
@@ -54,7 +53,7 @@
             height: 0.3em;
             border-radius: 2em;
         }
-        .bar_2:after{
+        .bar_2:after {
             background-color: transparent;
             color: transparent;
             width: 2em;
@@ -63,7 +62,7 @@
             border-radius: 2em;
         }
         .bar_2 {
-             transition-duration: 2s;
+            transition-duration: 2s;
             background-color: #dfc298;
             color: transparent;
             width: 2em;
@@ -71,61 +70,57 @@
             height: 0.3em;
             border-radius: 2em;
         }
-        .bar_3:after{
-       
+        .bar_3:after {
             background-color: #dfc298;
             width: 2em;
             color: transparent;
             margin-bottom: 0.3em;
             height: 0.3em;
             border-radius: 2em;
-            transform:rotate(-140deg);
-           position: relative;
-           bottom: 0.6em;
+            transform: rotate(140deg);
+            position: relative;
+            bottom: 0.6em;
         }
         .bar_3 {
-            transition-duration:2s;
-            background-color: #dfc298;
-            width: 2em;
-            color: transparent;
-            margin-bottom: 0.3em;
-            height: 0.3em;
-            border-radius: 2em;
-        }
-          .x_1 :after{
-            background-color: #dfc298;
-            color: transparent;
-            width: 2em;
-            margin-bottom: 0.3em;
-            height: 0.3em;
-            border-radius: 2em;
-        }
-        .x_1{
-            
             transition-duration: 2s;
-               background-color: #dfc298;
+            background-color: #dfc298;
+            width: 2em;
+            color: transparent;
+            margin-bottom: 0.3em;
+            height: 0.3em;
+            border-radius: 2em;
+        }
+        .x_1 :after {
+            background-color: #dfc298;
             color: transparent;
             width: 2em;
             margin-bottom: 0.3em;
             height: 0.3em;
             border-radius: 2em;
-            transform:rotate(140deg);
+        }
+        .x_1 {
+            transition-duration: 2s;
+            background-color: #dfc298;
+            color: transparent;
+            width: 2em;
+            margin-bottom: 0.3em;
+            height: 0.3em;
+            border-radius: 2em;
+            transform: rotate(140deg);
             position: relative;
             top: 0.6em;
-            
         }
-         .x_2:after{
-             
-              background-color: #dfc298;
+        .x_2:after {
+            background-color: #dfc298;
             width: 2em;
             color: transparent;
             margin-bottom: 0.3em;
             height: 0.3em;
             border-radius: 2em;
             position: relative;
-           }
-         .x_2{
-             transition-duration: 1s;
+        }
+        .x_2 {
+            transition-duration: 1s;
             background-color: transparent;
             color: transparent;
             width: 2em;
@@ -133,26 +128,25 @@
             height: 0.3em;
             border-radius: 2em;
         }
-          .x_3:after{
-             
-              background-color: #dfc298;
+        .x_3:after {
+            background-color: #dfc298;
             width: 2em;
             color: transparent;
             margin-bottom: 0.3em;
             height: 0.3em;
             border-radius: 2em;
-           }
-         .x_3{
-            transition-duration:2s;
-              background-color: #dfc298;
+        }
+        .x_3 {
+            transition-duration: 2s;
+            background-color: #dfc298;
             width: 2em;
             color: transparent;
             margin-bottom: 0.3em;
             height: 0.3em;
             border-radius: 2em;
-            transform:rotate(-140deg);
-           position: relative;
-           bottom: 0.6em;
+            transform: rotate(-140deg);
+            position: relative;
+            bottom: 0.6em;
         }
         svg.Carrito {
             margin: 12px;
@@ -182,8 +176,8 @@
             margin: 4px;
             width: min-content;
         }
-        a.Menu{
-            font-size:2em;
+        a.Menu {
+            font-size: 2em;
         }
     }
     /* version escritorio para abajo */
@@ -195,18 +189,34 @@
             width: 100%;
             flex-direction: row;
         }
+        button.sc-bdfBwQ.iLquPE.rec.rec-arrow.rec.rec-arrow-right {
+            display: none;
+        }
+        button.sc-bdfBwQ.iLquPE.rec.rec-arrow.rec.rec-arrow-left {
+            display: none;
+        }
+        button.sc-gKsewC.cJeRRR.rec.rec-dot.rec.rec-dot_active {
+            background: transparent;
+            box-shadow: none;
+        }
     }
     
     body {
-          -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
+        -webkit-touch-callout: none;
+        /* iOS Safari */
+        -webkit-user-select: none;
+        /* Safari */
+        -khtml-user-select: none;
+        /* Konqueror HTML */
+        -moz-user-select: none;
+        /* Firefox */
+        -ms-user-select: none;
+        /* Internet Explorer/Edge */
+        user-select: none;
+        /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
-                                     -webkit-touch-callout: none;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-touch-callout: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         margin: 0;
         background-color: rgb(36, 36, 36);
         font-family: 'Bebas Neue', cursive;
@@ -227,4 +237,12 @@
     .titulo_instrumento {
         display: flex;
         justify-content: center;
+    }
+    
+    button:focus {
+        outline: none
+    }
+    
+    .lgksPe {
+        background-color: #dfc298 !important;
     }

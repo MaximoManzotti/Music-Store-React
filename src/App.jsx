@@ -1,5 +1,6 @@
 import NavBarPhone from './components/NavBar/NavBarPhone';
-import Instrumentos from './components/ItemListContainer/Instrumentos/instrumentos'
+import Instrumentos from './components/ItemListContainer/Instrumentos/instrumentos';
+import Home from './components/Home/home'
 import NavBar from './components/NavBar/NavBar'
 import Detail from './components/ItemDetailContainer/ItemDetail';
 import {BrowserRouter, Switch, Route } from 'react-router-dom'
@@ -16,6 +17,9 @@ function App() {
         <NavBarPhone/>
           </header>
       <Switch>
+      <Route exact path="/">
+        <Home/>
+        </Route>
        <Route exact path="/category/:instrumentos?">
         <Instrumentos/>
         </Route>

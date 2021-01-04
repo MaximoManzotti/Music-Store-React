@@ -27,17 +27,16 @@
 .Menu {
     text-decoration: none;
     color: #dfc298;
-
 }
 
 .Menu:hover {
     text-decoration: none;
-    color: #c09f71;
+    color: #743081;
 }
 
 .Menu:active {
     text-decoration: none;
-    color: rgb(90, 87, 87);
+    color: #682e74;
 }
 
 .Logo_murcielago {
@@ -53,12 +52,11 @@ nav li {
     display: inline;
 }
 
-li{
+li {
     list-style: none;
     margin-top: 1em;
     padding: 0.5em;
-    text-align:center;
-    
+    text-align: center;
 }
 
 div.logo_menu {
@@ -68,12 +66,13 @@ div.logo_menu {
 
 .LogoyMarca {
     display: flex;
+    text-decoration: none;
 }
 
 .Nombre_marca {
     color: white;
     margin-left: 0.1em;
-    
+    text-decoration: none;
 }
 
 .Nav_contenedor_Pc {
@@ -89,8 +88,13 @@ div.logo_menu {
     display: none;
 }
 
+.Ul_Phone:after {
+    background-color: transparent;
+    color: transparent;
+}
+
 .Ul_Phone {
-     display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     position: absolute;

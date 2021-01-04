@@ -10,7 +10,6 @@ const Detail = () => {
     const [product, setProduct] = useState([]);
 
 
-    // console.log(lista)
 
 
     const getProduct = new Promise((resolve, reject) => {

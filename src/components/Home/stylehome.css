@@ -1,0 +1,55 @@
+.home {
+    background-image: url(../assets/Recital.jpg);
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.txt_home {
+    margin-top: 1em;
+    background-color: black;
+    padding: 1em;
+}
+
+.titulo_home {
+    color: white;
+    margin: 0px;
+}
+
+.parrafo_home {
+    margin: 0px;
+}
+
+.categoria {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+}
+
+.Icono_categoria {
+    border-radius: 1em;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 1em;
+    padding: 2em;
+    color: white;
+    background-image: linear-gradient( #743081, black);
+}
+
+.Icono_categoria:focus {
+    outline: none;
+}
+
+.Icono_categoria:hover {
+    box-shadow: 0 0 1rem 0 rgb(240, 199, 110);
+}
+
+a.active {
+    text-decoration: none;
+}
