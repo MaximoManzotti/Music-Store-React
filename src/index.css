@@ -179,6 +179,14 @@
         a.Menu {
             font-size: 2em;
         }
+        p.titulo_home {
+            margin: 0px;
+            font-size: 2em;
+            color: white;
+        }
+        p.parrafo_home {
+            font-size: 1em;
+        }
     }
     /* version escritorio para abajo */
     

@@ -39,19 +39,71 @@ p.Cantidad_Productos {
 }
 
 .agregar_al_carrito {
-    text-decoration:none;
-    width: 100%;
-    height: 2em;
-    background-color: #dfc298;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
     border: none;
-    color: black;
+    color: #dfc298;
+    background-color: transparent;
     font-family: 'Bebas Neue', cursive;
+    overflow: hidden;
+    transition: 0.2s;
     font-size: 1em;
-    outline: none;
+    width: 100%;
 }
 
 .agregar_al_carrito:hover {
-    background-color: #b39c7c;
+    background-color: #dfc298;
+    color: black;
+    box-shadow: 0 0 10px #dfc298, 0 0 40px #dfc298, 0 0 80px #dfc298;
+    transition-delay: 1.2s;
+}
+
+.agregar_al_carrito span {
+    position: absolute;
+    display: block;
+}
+
+#span_1 {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #dfc29800, #dfc298);
+}
+
+.agregar_al_carrito:hover #span_1 {
+    left: 100%;
+    transition: 1s;
+}
+
+#span_2 {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, #dfc29800, #dfc298);
+}
+
+.agregar_al_carrito:hover #span_2 {
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+
+#span_3 {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, #dfc29800, #dfc298);
+}
+
+.agregar_al_carrito:hover #span_3 {
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
 }
 
 .count_display {

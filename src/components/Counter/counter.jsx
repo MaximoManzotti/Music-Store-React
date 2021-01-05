@@ -36,7 +36,13 @@ function Contador({Quantity}) {
       <div className='count_container'>
         <p className='Cantidad_Productos'>Disponibilidad de Productos: {qty}</p>
         <CountContainer count={count} add={add} less={less} quantity={qty}/>
-      <button className='agregar_al_carrito' onClick={()=>setRedirect(true)}>Agregar al Carrito</button>
+      <button className='agregar_al_carrito' onClick={()=>setRedirect(true)}>
+      <span id='span_1'></span>
+      <span id='span_2'></span>
+      <span id='span_3'></span>
+      <span id='span_4'></span>
+      AGREGAR AL CARRITO
+      </button>
           {redirect && <Redirect to="/cart"/>  } 
       </div>
       </div>
