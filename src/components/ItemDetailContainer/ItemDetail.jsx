@@ -1,14 +1,23 @@
 import "../ItemDetailContainer/itemDetailStyle.css";
 import { useEffect, useState, useContext  } from "react";
-import { useParams} from "react-router-dom";
+import { Redirect, useParams, useHistory} from "react-router-dom";
 import Instrumentos from ".././ItemListContainer/ProductList/productlist";
 import Counter from "../Counter/counter";
 import Loading from "../assets/loading.gif";
-import {Store } from '../../store/index'
+import {Store } from '../../store/index';
+
 const Detail = () => {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   const [data, setData] = useContext(Store);
+  const history = useHistory();
+  const onAdd = (count) => {
+    setData({
+        ...data, 
+        cantidad: data.cantidad + count,
+        items: [...data.product, product],
+    })}; history.push('/cart');
+    const [redirect, setRedirect] = useState(false);
 
   const getProduct = new Promise((resolve, reject) => {
     const lista = Instrumentos.filter((detalle) => detalle.id === Number(id));
@@ -51,6 +60,17 @@ const Detail = () => {
                 {product.Precio}
               </p>
               <Counter Quantity={product.Quantity} />
+              <button
+          className="agregar_al_carrito"
+          onClick={() =>{ setRedirect(true); onAdd()}}
+        >
+          <span id="span_1"></span>
+          <span id="span_2"></span>
+          <span id="span_3"></span>
+          <span id="span_4"></span>
+          AGREGAR AL CARRITO
+        </button>
+        {redirect && <Redirect to="/cart" />}
             </div>
           </div>
         </>

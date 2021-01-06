@@ -2,6 +2,7 @@ import "./Container.css";
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import CountContainer from "./countContainer";
+import ItemDetail from '../ItemDetailContainer/ItemDetail'
 // import '../ItemListContainer/Guitarras/guitarras';
 
 function Contador({ Quantity }) {
@@ -35,7 +36,7 @@ function Contador({ Quantity }) {
         <CountContainer count={count} add={add} less={less} quantity={qty} />
         <button
           className="agregar_al_carrito"
-          onClick={() => setRedirect(true)}
+          onClick={() =>{ setRedirect(true); ItemDetail(count)}}
         >
           <span id="span_1"></span>
           <span id="span_2"></span>
