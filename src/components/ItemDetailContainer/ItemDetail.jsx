@@ -11,12 +11,16 @@ const Detail = () => {
   const [product, setProduct] = useState([]);
   const [data, setData] = useContext(Store);
   const history = useHistory();
+  
+  
   const onAdd = (count) => {
     setData({
         ...data, 
         cantidad: data.cantidad + count,
         items: [...data.product, product],
-    })}; history.push('/cart');
+    }); history.push('/cart');}
+
+
     const [redirect, setRedirect] = useState(false);
 
   const getProduct = new Promise((resolve, reject) => {
@@ -24,7 +28,7 @@ const Detail = () => {
     const lista_resuelta = lista[0];
     resolve(lista_resuelta);
   });
-
+   
   const getProducstFromDB = async () => {
     try {
       const result = await getProduct;
@@ -59,11 +63,10 @@ const Detail = () => {
               <p style={{ justifyContent: "center", display: "flex" }}>
                 {product.Precio}
               </p>
-              <Counter Quantity={product.Quantity} />
+              <Counter Quantity={product.Quantity}  addCart={onAdd} />
               <button
           className="agregar_al_carrito"
-          onClick={() =>{ setRedirect(true); onAdd()}}
-        >
+          onClick={() =>{ onAdd(); setRedirect(true)}}>
           <span id="span_1"></span>
           <span id="span_2"></span>
           <span id="span_3"></span>
@@ -81,6 +84,5 @@ const Detail = () => {
         </div>
       )}
     </section>
-  );
-};
+  )};
 export default Detail;
