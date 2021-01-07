@@ -1,15 +1,23 @@
 import "../ItemDetailContainer/itemDetailStyle.css";
-import { useEffect, useState } from "react";
-import {  useParams, } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import {  useHistory, useParams, } from "react-router-dom";
 import Instrumentos from ".././ItemListContainer/ProductList/productlist";
 import Counter from "../Counter/counter";
 import Loading from "../assets/loading.gif";
+import {Store } from '../../store/index';
 
-
-const Detail = () => {
+const Detail = ({item}) => {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
+  const [data, setData] = useContext(Store);
+  const history = useHistory();
 
+  const onAdd = (count) => {
+    setData({
+        ...data, 
+        cantidad: data.cantidad + count,
+        items: [...data.items, item] ,
+    }); history.push('/cart');}
 
 
     // const [redirect, setRedirect] = useState(false);
@@ -18,6 +26,7 @@ const Detail = () => {
     const lista = Instrumentos.filter((detalle) => detalle.id === Number(id));
     const lista_resuelta = lista[0];
     resolve(lista_resuelta);
+    reject(alert('error'))
   });
    
   const getProducstFromDB = async () => {

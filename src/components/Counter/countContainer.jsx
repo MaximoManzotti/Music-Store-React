@@ -1,25 +1,15 @@
 import './Container.css';
 import './counter';
-import React, { useContext } from "react";
-import { useHistory } from 'react-router-dom';
-import {Store } from '../../store/index';
+import React from "react";
 // import {useParams} from 'react-router-dom';
 // import Instrumentos from '../ItemListContainer/ProductList/productlist';
 
 
 function CountContainer({ count, add, less, quantity, item}) {
-  const [data, setData] = useContext(Store);
-  const history = useHistory();
+
   
   
-  const onAdd = (count) => {
-    setData({
-        ...data, 
-        cantidad: data.cantidad + count,
-        items: [...data.items, item] ,
-    }); history.push('/cart');}
-
-
+  
   var qty = { quantity }
   return (
 
