@@ -13,7 +13,7 @@ const Detail = () => {
   const history = useHistory();
 
   function onAdd(count , product){
-    console.log(data)
+   localStorage.setItem('Cart', data.items )
     setData({
         ...data, 
         cantidad: data.cantidad + count,
