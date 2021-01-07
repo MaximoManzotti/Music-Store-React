@@ -1,16 +1,25 @@
 import './Container.css';
 import './counter';
-import React from "react";
+import React, { useContext } from "react";
+import { useHistory } from 'react-router-dom';
+import {Store } from '../../store/index';
 // import {useParams} from 'react-router-dom';
 // import Instrumentos from '../ItemListContainer/ProductList/productlist';
 
 
-function CountContainer({ count, add, less, quantity}) {
-  // const { id } = useParams();
-//  const [useProduct, setProduct] = useState()
-// console.log(id)
-//  let lista = Instrumentos.filter(guitarra => guitarra.id === Number(id));
-//   console.log(lista)
+function CountContainer({ count, add, less, quantity, item}) {
+  const [data, setData] = useContext(Store);
+  const history = useHistory();
+  
+  
+  const onAdd = (count) => {
+    setData({
+        ...data, 
+        cantidad: data.cantidad + count,
+        items: [...data.items, item] ,
+    }); history.push('/cart');}
+
+
   var qty = { quantity }
   return (
 
@@ -21,7 +30,15 @@ function CountContainer({ count, add, less, quantity}) {
         <p className='numero_producto'>{count}</p>
         <button onClick={() => add()} disabled={count === (qty.quantity - 0) ? 'disabled' : null} className="Sumar">+</button>
       </div>
-
+      <button
+          className="agregar_al_carrito"
+          onClick={() =>{ onAdd()}}>
+          <span id="span_1"></span>
+          <span id="span_2"></span>
+          <span id="span_3"></span>
+          <span id="span_4"></span>
+          AGREGAR AL CARRITO
+        </button>
     </>
   );
 }

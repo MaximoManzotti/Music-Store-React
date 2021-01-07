@@ -1,8 +1,7 @@
 import "./Container.css";
 import React, { useState } from "react";
 import CountContainer from "./countContainer";
-import ItemDetail from '../ItemDetailContainer/ItemDetail'
-// import '../ItemListContainer/Guitarras/guitarras';
+
 
 function Contador({ Quantity }) {
   const [count, setCount] = useState(1);

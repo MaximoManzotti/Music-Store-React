@@ -14,6 +14,7 @@ function App() {
     freeShipping: 4000,
     cuotas: 3,
   });
+  
 
   return (
     <>
