@@ -6,17 +6,18 @@ import Counter from "../Counter/counter";
 import Loading from "../assets/loading.gif";
 import {Store } from '../../store/index';
 
-const Detail = ({item}) => {
+const Detail = () => {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   const [data, setData] = useContext(Store);
   const history = useHistory();
 
-  function onAdd(count){
+  function onAdd(count , product){
+    console.log(data)
     setData({
         ...data, 
         cantidad: data.cantidad + count,
-        items: [...data.items, item] ,
+        items: [...data.items, product],
     }); history.push('/cart');}
 
 
@@ -63,7 +64,7 @@ const Detail = ({item}) => {
               <p style={{ justifyContent: "center", display: "flex" }}>
                 {product.Precio}
               </p>
-              <Counter Quantity={product.Quantity} onAdd={onAdd()} />
+              <Counter Quantity={product.Quantity} onAdd={onAdd} product={`${product.Marca} ${product.Modelo}`}/>
             </div>
           </div>
         </>
