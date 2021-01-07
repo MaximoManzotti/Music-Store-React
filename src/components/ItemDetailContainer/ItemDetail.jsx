@@ -12,7 +12,7 @@ const Detail = ({item}) => {
   const [data, setData] = useContext(Store);
   const history = useHistory();
 
-  const onAdd = (count) => {
+  function onAdd(count){
     setData({
         ...data, 
         cantidad: data.cantidad + count,
@@ -26,7 +26,7 @@ const Detail = ({item}) => {
     const lista = Instrumentos.filter((detalle) => detalle.id === Number(id));
     const lista_resuelta = lista[0];
     resolve(lista_resuelta);
-    reject(alert('error'))
+    // reject(alert('error'))
   });
    
   const getProducstFromDB = async () => {
@@ -63,9 +63,7 @@ const Detail = ({item}) => {
               <p style={{ justifyContent: "center", display: "flex" }}>
                 {product.Precio}
               </p>
-              <Counter Quantity={product.Quantity} />
-      
-        {/* {redirect && <Redirect to="/cart" />} */}
+              <Counter Quantity={product.Quantity} onAdd={onAdd()} />
             </div>
           </div>
         </>

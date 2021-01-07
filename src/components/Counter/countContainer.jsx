@@ -5,10 +5,10 @@ import React from "react";
 // import Instrumentos from '../ItemListContainer/ProductList/productlist';
 
 
-function CountContainer({ count, add, less, quantity, item}) {
+function CountContainer({ count, add, less, quantity, item, onAdd}) {
 
   
-  
+  console.log(count)
   
   var qty = { quantity }
   return (
@@ -22,7 +22,7 @@ function CountContainer({ count, add, less, quantity, item}) {
       </div>
       <button
           className="agregar_al_carrito"
-          onClick={() =>{ onAdd()}}>
+          onClick={()=>{onAdd(count)}}>
           <span id="span_1"></span>
           <span id="span_2"></span>
           <span id="span_3"></span>
