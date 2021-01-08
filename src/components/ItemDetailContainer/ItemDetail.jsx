@@ -13,14 +13,14 @@ const Detail = () => {
   const history = useHistory();
 
   function onAdd(count , product){
-   localStorage.setItem('Cart', data.items )
+  
     setData({
         ...data, 
         cantidad: data.cantidad + count,
         items: [...data.items, product],
     }); history.push('/cart');}
 
-
+    localStorage.setItem('Cart', `${data.cantidad}  ${data.items}` );
     // const [redirect, setRedirect] = useState(false);
 
   const getProduct = new Promise((resolve, reject) => {
