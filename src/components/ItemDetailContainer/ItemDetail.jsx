@@ -16,8 +16,8 @@ const Detail = () => {
     setData({
       ...data,
       producto: {
-        cantidad: data.producto.cantidad + count,
-        items: [...data.producto.items, product]
+        cantidad: data.cantidad + count,
+        items: [...data.items, product]
       }
 
       
