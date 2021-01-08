@@ -9,12 +9,11 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Store } from "./store";
 
 function App() {
-  const [data, setData] = useState({
-    items: [],
-    cantidad: 0,
-    // freeShipping: 4000,
-    // cuotas: 3,
-  });
+  const [data, setData] = useState( {
+    producto: { items: [],
+    cantidad: 0,}
+     
+    });
   
 
   return (

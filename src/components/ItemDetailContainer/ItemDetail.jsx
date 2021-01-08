@@ -1,10 +1,10 @@
 import "../ItemDetailContainer/itemDetailStyle.css";
 import { useContext, useEffect, useState } from "react";
-import {  useHistory, useParams, } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import Instrumentos from ".././ItemListContainer/ProductList/productlist";
 import Counter from "../Counter/counter";
 import Loading from "../assets/loading.gif";
-import {Store } from '../../store/index';
+import { Store } from "../../store/index";
 
 const Detail = () => {
   const { id } = useParams();
@@ -12,16 +12,23 @@ const Detail = () => {
   const [data, setData] = useContext(Store);
   const history = useHistory();
 
-  function onAdd(count , product){
-  
+  function onAdd(count, product) {
     setData({
-        ...data, 
-        cantidad: data.cantidad + count,
-        items: [...data.items, product],
-    }); history.push('/cart');}
+      ...data,
+      producto: {
+        cantidad: data.producto.cantidad + count,
+        items: [...data.producto.items, product]
+      }
 
-    localStorage.setItem('Cart', `${data.cantidad}  ${data.items}` );
-    // const [redirect, setRedirect] = useState(false);
+      
+    });
+    history.push("/cart");
+    
+  }
+ 
+   
+  localStorage.setItem("Cart",(`${data.items}${data.cantidad}`));
+  // const [redirect, setRedirect] = useState(false);
 
   const getProduct = new Promise((resolve, reject) => {
     const lista = Instrumentos.filter((detalle) => detalle.id === Number(id));
@@ -29,7 +36,7 @@ const Detail = () => {
     resolve(lista_resuelta);
     // reject(alert('error'))
   });
-   
+
   const getProducstFromDB = async () => {
     try {
       const result = await getProduct;
@@ -64,7 +71,11 @@ const Detail = () => {
               <p style={{ justifyContent: "center", display: "flex" }}>
                 {product.Precio}
               </p>
-              <Counter Quantity={product.Quantity} onAdd={onAdd} product={`${product.Marca} ${product.Modelo}`}/>
+              <Counter
+                Quantity={product.Quantity}
+                onAdd={onAdd}
+                product={`${product.Marca} ${product.Modelo}`}
+              />
             </div>
           </div>
         </>
@@ -75,5 +86,6 @@ const Detail = () => {
         </div>
       )}
     </section>
-  )};
+  );
+};
 export default Detail;
