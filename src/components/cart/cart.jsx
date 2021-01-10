@@ -4,12 +4,16 @@ import {Store} from '../../store';
 const Cart = () => {
     // eslint-disable-next-line no-unused-vars
     const [data, setData] = useContext(Store);
-    console.log(localStorage.getItem('Cart'))
+
+    data.items.forEach(e => {
+       console.log( Number(e.id) )
+    })
+  
     return (
         <>
             <h1>Estás en el cart</h1>
-          <h2>{localStorage.getItem('Cart')}</h2>
-        
+            <h2>Cantidad total: {data.cantidad}</h2>
+          {data.items.map(i => <h3>{i.product} - {i.cantidad}</h3>)}
         </>
     )
 }

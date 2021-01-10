@@ -8,12 +8,12 @@ import Cart from "./components/cart/cart"
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Store } from "./store";
 
+
 function App() {
-  const [data, setData] = useState( {
-    producto: { items: [],
-    cantidad: 0,}
-     
-    });
+  const [data, setData] = useState(localStorage.getItem('Cart') ? JSON.parse(localStorage.getItem('Cart')) : {
+        items: [], 
+    cantidad: 0
+  });
   
 
   return (

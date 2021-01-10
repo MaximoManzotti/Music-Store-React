@@ -14,19 +14,27 @@ const Detail = () => {
 
   function onAdd(count, product) {
     setData({
-      ...data,
-      producto: {
-        cantidad: data.cantidad + count,
-        items: [...data.items, product]
-      }
-
-      
+      ...data, 
+      id: id ,     
+      cantidad: data.cantidad + count,
+      items: [...data.items, {product, cantidad: count, id:id}]
     });
+    localStorage.setItem("Cart", JSON.stringify({
+      ...data, 
+      id: id , 
+      cantidad: data.cantidad + count,
+      items: [...data.items, {product, cantidad: count, id:id}]
+    }));
     history.push("/cart");
-    
   }
- 
-   
+  // eslint-disable-next-line no-self-compare
+  data.items.forEach(e => {if(e.product === e.product){
+  console.log(e.cantidad + e.cantidad)
+  console.log(e.product )
+  console.log(e.id)
+  }} )
+
+
   localStorage.setItem("Cart",(`${data.items}${data.cantidad}`));
   // const [redirect, setRedirect] = useState(false);
 
