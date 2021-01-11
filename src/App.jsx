@@ -12,7 +12,7 @@ import { Store } from "./store";
 function App() {
   const [data, setData] = useState(localStorage.getItem('Cart') ? JSON.parse(localStorage.getItem('Cart')) : {
         items: [], 
-    cantidad: 0
+      cantidad: 0
   });
   
 
