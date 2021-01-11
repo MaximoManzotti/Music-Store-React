@@ -19,7 +19,7 @@ function NavPhone() {
     return (
         <>
             <div className='Menu_Phone'>
-                <IconoCarrito/>
+            <a href='/cart' className="Menu_Carrito"><IconoCarrito/></a> 
                 <div className='contenedor_bar'  onClick={openshowMenu} >
                     <div  className={barMenu ? 'bar_1'  :'x_1' }>.</div>
                     <div  className={barMenu ? 'bar_2'  :'x_2' }>.</div>

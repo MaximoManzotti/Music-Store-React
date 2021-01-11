@@ -27,12 +27,15 @@ const Detail = () => {
     }));
     history.push("/cart");
   }
+
+
+
   // eslint-disable-next-line no-self-compare
-  data.items.forEach(e => {if(e.product === e.product){
-  console.log(e.cantidad + e.cantidad)
-  console.log(e.product )
-  console.log(e.id)
-  }} )
+  // data.items.forEach(e => {if(e.product === e.product){
+  // console.log(e.cantidad + e.cantidad)
+  // console.log(e.product )
+  // console.log(e.id)
+  // }} )
 
 
   localStorage.setItem("Cart",(`${data.items}${data.cantidad}`));
