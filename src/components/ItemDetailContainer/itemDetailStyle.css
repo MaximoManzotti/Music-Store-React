@@ -46,9 +46,11 @@
 }
 
 .Imagen_Detail {
-    max-width: 10em;
+    max-width: 19em;
     border: solid;
     padding: 1em;
+    object-fit: cover;
+    max-height: 20em;
 }
 
 .div_producto {

@@ -18,6 +18,9 @@ function NavPhone() {
     }
     return (
         <>
+        <div className={showMenu ? 'Pantallacompleta' : 'PantallaCompletaClose'} onClick={openshowMenu}>
+            
+        </div>
             <div className='Menu_Phone'>
             <a href='/cart' className="Menu_Carrito"><IconoCarrito/></a> 
                 <div className='contenedor_bar'  onClick={openshowMenu} >
