@@ -4,7 +4,7 @@ import { FaGuitar, FaDrum } from "react-icons/fa";
 import { GiGuitarBassHead, GiPartyHat } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
 import Loading from '../assets/loading.gif';
-// import Particles from 'react-particles-js';
+
 
 function home() {
   return ( 
@@ -13,7 +13,7 @@ function home() {
     
     {  Productos ? (
       <>
-      {/* <Particles/> */}
+    
       <section className='TituloSeccion'>
       <div className="txt_home">
         <p className="titulo_home">BAT MUSIC STORE</p>
@@ -52,7 +52,6 @@ function home() {
       </section>
       <h2>PRODUCTOS</h2>
       <Productos /> 
-     
       </> ) : (
         <div>
           <img src={Loading} alt="Cargando..." />

@@ -1,4 +1,4 @@
-import './styleCart.css'
+import "./styleCart.css";
 import { useContext } from "react";
 import { Store } from "../../store";
 import { ImCross } from "react-icons/im";
@@ -8,11 +8,16 @@ import Loading from "../assets/loading.gif";
 const Cart = () => {
   const [data, setData] = useContext(Store);
   let copyData = data;
-  // eslint-disable-next-line no-self-assign
   
+  // eslint-disable-next-line no-unused-expressions
+ copyData.items.forEach(e => console.log(e))
 
+//   console.log(encontrarRepetidos)
+//   encontrarRepetidos.forEach(e => {
+//   console.log(e.product.unique())
+// })
 
-
+  //ELIMINA TODO EL CART
   function deleteAll() {
     copyData.items = [];
     setData({
@@ -30,10 +35,7 @@ const Cart = () => {
       })
     );
   }
-
-
-
-
+  //ELIMINA DONDE HAGA CLICK EL USUARIO
   function deleteItem(id) {
     let lista_filtrada = copyData.items.filter((e) => e.id === id);
     var idx = copyData.items.indexOf(lista_filtrada[0]);
@@ -56,26 +58,27 @@ const Cart = () => {
   return (
     <div>
       {copyData ? (
-        <><div className="ContenedorCarrito">
-          <h1>
-            Estás en el carrito{" "}
-            <AiOutlineDelete
-              onClick={() => {
-                deleteAll();
-              }}
-            />
-          </h1>
-          <h2>Cantidad total: {data.cantidad}</h2>
-          {data.items.map((i) => (
-            <h3 key="producto">
-              {i.product} - {i.cantidad}{" "}
-              <ImCross
+        <>
+          <div className="ContenedorCarrito">
+            <h1>
+              Estás en el carrito{" "}
+              <AiOutlineDelete
                 onClick={() => {
-                  deleteItem(i.id);
+                  deleteAll();
                 }}
-              />{" "}
-            </h3>
-          ))}
+              />
+            </h1>
+            <h2>Cantidad total: {data.cantidad}</h2>
+            {data.items.map((i) => (
+              <h3 key="producto">
+                {i.product} - {i.cantidad}{" "}
+                <ImCross
+                  onClick={() => {
+                    deleteItem(i.id);
+                  }}
+                />{" "}
+              </h3>
+            ))}
           </div>
         </>
       ) : (
