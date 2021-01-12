@@ -1,3 +1,4 @@
+import './styleCart.css'
 import { useContext } from "react";
 import { Store } from "../../store";
 import { ImCross } from "react-icons/im";
@@ -8,12 +9,15 @@ const Cart = () => {
   const [data, setData] = useContext(Store);
   let copyData = data;
   // eslint-disable-next-line no-self-assign
+  
+
+
 
   function deleteAll() {
-  copyData.items = []
+    copyData.items = [];
     setData({
       ...copyData,
-    })
+    });
     setData({
       ...copyData,
       cantidad: data.items.reduce((acc, i) => acc + i.cantidad, 0),
@@ -26,6 +30,9 @@ const Cart = () => {
       })
     );
   }
+
+
+
 
   function deleteItem(id) {
     let lista_filtrada = copyData.items.filter((e) => e.id === id);
@@ -49,9 +56,14 @@ const Cart = () => {
   return (
     <div>
       {copyData ? (
-        <>
+        <><div className="ContenedorCarrito">
           <h1>
-            Estás en el carrito <AiOutlineDelete onClick={() => {deleteAll()}} />
+            Estás en el carrito{" "}
+            <AiOutlineDelete
+              onClick={() => {
+                deleteAll();
+              }}
+            />
           </h1>
           <h2>Cantidad total: {data.cantidad}</h2>
           {data.items.map((i) => (
@@ -64,6 +76,7 @@ const Cart = () => {
               />{" "}
             </h3>
           ))}
+          </div>
         </>
       ) : (
         <div>

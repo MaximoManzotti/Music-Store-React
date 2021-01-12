@@ -202,6 +202,10 @@
              p.parrafo_home {
                  font-size: 1em;
              }
+             div.ContenedorCarrito {
+                 font-size: 0.7em;
+                 margin: 0px;
+             }
          }
          /* version escritorio para abajo */
          
