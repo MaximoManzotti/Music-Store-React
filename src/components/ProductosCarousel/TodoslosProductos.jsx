@@ -37,8 +37,8 @@ function Productos() {
 
        return (<section className='contenedor_instrumentos_carrousel'>{ items.length ? <>
            <Carrousel breakPoints={breakPoints} >
-              {( Instrumentos.map(u =>
-                     <Link to={`/items/${u.id}`} className='VerMas'>
+              {( Instrumentos.map((u , index) =>
+                     <Link to={`/items/${u.id}`} className='VerMas' key={index}>
                             <div className='Producto' key={u.id}>
                                    <p className='txt_producto'>{u.Marca} {u.Modelo}</p>
                                    <img src={u.Imagen} alt="Guitarra" className="Foto_instrumento" />

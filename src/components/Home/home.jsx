@@ -6,11 +6,15 @@ import { NavLink } from "react-router-dom";
 
 function home() {
   return (
+    
     <div className="home">
+      <section className='TituloSeccion'>
       <div className="txt_home">
         <p className="titulo_home">BAT MUSIC STORE</p>
         <p className="parrafo_home">Feel The Power In Your Veins</p>
       </div>
+      </section>
+<section className= 'CategoriasSection'>
       <h2>CATEGORIAS</h2>
       <div className="categoria">
         <NavLink to={"/category/guitarras"} className="NavLinkHome">
@@ -39,9 +43,11 @@ function home() {
           </div>
         </NavLink>
       </div>
+      </section>
       <h2>PRODUCTOS</h2>
       <Productos />
     </div>
+   
   );
 }
 export default home;

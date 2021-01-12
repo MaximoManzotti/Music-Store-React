@@ -30,8 +30,8 @@ function Instrumento() {
     <section className="contenedor_instrumentos">
       {items.length ? (
         <>
-          {items.map((u) => (
-            <Link to={`/items/${u.id}`} className="VerMas">
+          {items.map((u, index ) => (
+            <Link to={`/items/${u.id}`} className="VerMas" key={index} >
               <div className="Producto" key={u.id}>
                 <p className="txt_producto">
                   {u.Marca} {u.Modelo}
