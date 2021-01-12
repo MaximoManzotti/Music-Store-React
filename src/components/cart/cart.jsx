@@ -12,7 +12,6 @@ const Cart = () => {
     
 function deleteItem (id){
  let lista_filtrada =  copyData.items.filter(e => e.id === id);
- console.log()
  var idx = copyData.items.indexOf(lista_filtrada[0]);
  console.log(idx)
 copyData.items.splice(idx , 1)
