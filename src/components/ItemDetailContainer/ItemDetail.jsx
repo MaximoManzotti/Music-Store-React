@@ -13,6 +13,28 @@ const Detail = () => {
   const history = useHistory();
 
   function onAdd(count, product) {
+
+    if(data.items.length > 0){
+    var itemInCart = data.items.some(i => i.id === id);
+    }else{
+     itemInCart = false
+    }
+    if(itemInCart){
+      const newItems = [...data.items];
+      newItems.forEach((i)=>{
+        if(i.id === id){
+          i.cantidad+= count;
+        }
+      })
+      setData({
+        items: newItems,
+        cantidad: newItems.reduce((acc, item)=> acc+=item.cantidad),
+        precioTotal: 0
+      })
+      console.log(data);
+  } else {
+     //si llegaste aca es porque el producto no se encuentra en el cart, por lo que podes agregarlo normalmente
+  
     setData({
       ...data, 
       id: id ,     
@@ -26,7 +48,7 @@ const Detail = () => {
       items: [...data.items, {product, cantidad: count, id:id}]
     }));
     history.push("/cart");
-  }
+  }}
 
 
 

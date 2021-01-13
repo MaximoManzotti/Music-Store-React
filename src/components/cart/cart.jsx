@@ -9,14 +9,7 @@ const Cart = () => {
   const [data, setData] = useContext(Store);
   let copyData = data;
   
-  // eslint-disable-next-line no-unused-expressions
- copyData.items.forEach(e => console.log(e))
-
-//   console.log(encontrarRepetidos)
-//   encontrarRepetidos.forEach(e => {
-//   console.log(e.product.unique())
-// })
-
+  
   //ELIMINA TODO EL CART
   function deleteAll() {
     copyData.items = [];
