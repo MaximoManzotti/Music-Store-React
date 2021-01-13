@@ -1,0 +1,103 @@
+    .home {
+        height: 100%;
+        width: 100%;
+        margin: 0px;
+        background-position: center center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    section.CategoriasSection {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin-top: 2em;
+    }
+    /* section.ProductosSection {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        margin-top: 2em;
+    } */
+    
+    section.TituloSeccion {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2em;
+        padding: 2em;
+        background-color: #000000ba;
+        border-radius: 1em;
+    }
+    
+    .NavLinkHome {
+        text-decoration: none;
+        color: #dfc298;
+    }
+    
+    .txt_home {
+        width: 100%;
+        /* background: linear-gradient(-45deg, black, #4b0081, black, #56008c, black, #7900ac, black); */
+        background-size: 400% 400%;
+        align-items: center;
+        display: contents;
+        /* animation: gradientBG 15s ease infinite;*/
+    }
+    /* @keyframes gradientBG {
+        0% {
+            background-position: 0% 50%;
+            color: #dfc298;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+            color: #dfc298;
+        }
+    } */
+    
+    .titulo_home {
+        margin: 0px;
+        font-size: 4em;
+        color: white;
+    }
+    
+    .parrafo_home {
+        margin: 0px;
+        font-size: 1.5em;
+        color: #dfc298;
+        /* animation: gradientBG 15s ease infinite; */
+    }
+    
+    .categoria {
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .Icono_categoria {
+        border-radius: 1em;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 1em;
+        padding: 2em;
+        background-image: linear-gradient( #3a1c41, black);
+    }
+    
+    .Icono_categoria:focus {
+        outline: none;
+    }
+    
+    .Icono_categoria:hover {
+        box-shadow: 0 0 1rem 0 rgb(240, 199, 110);
+    }
+    
+    a.active {
+        text-decoration: none;
+    }

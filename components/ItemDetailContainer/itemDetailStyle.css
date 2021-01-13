@@ -1,0 +1,65 @@
+.Detalles_instrumento {
+    display: flex;
+}
+
+.count_container {
+    width: 14em;
+}
+
+.container_cargando {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.gif_carga {
+    display: flex;
+    justify-content: center;
+    width: 10em;
+}
+
+.div_gif {
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor_detail {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 5%;
+    background-color: #000000ad;
+}
+
+.contenedor_imagen {
+    display: flex;
+    width: min-content;
+    margin: 1em;
+}
+
+.Titulo_Producto {
+    display: flex;
+    justify-content: center;
+}
+
+.contador_detail {
+    display: flex;
+    justify-content: center;
+}
+
+.Imagen_Detail {
+    max-width: 19em;
+    border: solid;
+    padding: 1em;
+    object-fit: cover;
+    max-height: 20em;
+}
+
+.div_producto {
+    width: 70%;
+}
+
+.Descripcion_producto {
+    text-align: justify;
+    margin: 1em;
+}
