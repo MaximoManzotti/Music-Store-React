@@ -38,30 +38,18 @@ const Detail = () => {
     setData({
       ...data, 
       id: id ,     
-      cantidad: data.cantidad + count,
+      cantidad: JSON.stringify( data.cantidad + count),
       items: [...data.items, {product, cantidad: count, id:id}]
     });
     localStorage.setItem("Cart", JSON.stringify({
       ...data, 
       id: id , 
-      cantidad: data.cantidad + count,
+      cantidad:JSON.stringify( data.cantidad + count),
       items: [...data.items, {product, cantidad: count, id:id}]
     }));
-    history.push("/cart");
-  }}
+  
+  }  history.push("/cart");}
 
-
-
-  // eslint-disable-next-line no-self-compare
-  // data.items.forEach(e => {if(e.product === e.product){
-  // console.log(e.cantidad + e.cantidad)
-  // console.log(e.product )
-  // console.log(e.id)
-  // }} )
-
-
-  localStorage.setItem("Cart",(`${data.items}${data.cantidad}`));
-  // const [redirect, setRedirect] = useState(false);
 
   const getProduct = new Promise((resolve, reject) => {
     const lista = Instrumentos.filter((detalle) => detalle.id === Number(id));
