@@ -28,7 +28,7 @@ const Detail = () => {
       })
       setData({
         items: newItems,
-        cantidad: data.reduce((acc, item)=> acc+=item.items.cantidad),
+        cantidad: data.items.reduce((acc, item) => acc+=item.cantidad, 0),
         precioTotal: 0
       })
       console.log(data);
