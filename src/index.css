@@ -1,7 +1,14 @@
 .video {
-    height: max-content !important;
-    width: max-content !important;
+    height: auto !important;
+    width: 100% !important;
+    position: absolute;
+    z-index: -1;
+    margin: 0px;
+    /* bottom: 4em; */
+    /* width: 640px; */
+   
 }
+
 
 @media screen and (max-width: 902px) {
     body {

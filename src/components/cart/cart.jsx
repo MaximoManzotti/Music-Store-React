@@ -54,22 +54,22 @@ const Cart = () => {
         <>
           <div className="ContenedorCarrito">
             <h1>
-              Estás en el carrito{" "}
+              Estás en el carrito
               <AiOutlineDelete
                 onClick={() => {
                   deleteAll();
                 }}
-              />
+                style={{position:'absolute'}} />
             </h1>
             <h2>Cantidad total: {data.cantidad}</h2>
             {data.items.map((i) => (
               <h3 key="producto">
-                {i.product} - {i.cantidad}{" "}
+                {i.product} - {i.cantidad}
                 <ImCross
                   onClick={() => {
                     deleteItem(i.id);
                   }}
-                />{" "}
+                style={{position:'absolute'}}/>
               </h3>
             ))}
           </div>
@@ -79,7 +79,7 @@ const Cart = () => {
           <img src={Loading} alt="Cargando..." />
           <p className="txt_cargando">Cargando</p>
         </div>
-      )}{" "}
+      )}
     </div>
   );
 };

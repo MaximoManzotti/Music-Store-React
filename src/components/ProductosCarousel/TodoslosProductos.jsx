@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Link} from 'react-router-dom';
 import Instrumentos from '../ItemListContainer/ProductList/productlist';
 import Carrousel from 'react-elastic-carousel';
+import {getFirestore} from '../../DB'
 
 const breakPoints = [
     {width: 1,  itemsToShow: 1 },
@@ -15,25 +16,19 @@ const breakPoints = [
 function Productos() {
 
      const [items, setItems] = useState([]);
+     const db = getFirestore();
    
      
+     const getProducstFromDB = ()=> {
+            db.collection('Productos').get()
+            .then(docs => docs.forEach(doc => console.log(doc)))
+            .catch(e => console.log(e))         }
+
          useEffect(() => {
               getProducstFromDB();
               // eslint-disable-next-line react-hooks/exhaustive-deps
        }, [])
 
-     
-       const getProducts = new Promise((resolve, reject) => {
-                     resolve(Instrumentos);
-       })
-       const getProducstFromDB = async () => {
-              try {
-                     const result = await getProducts;
-                     setItems(result);
-              } catch (error) {
-                     alert('No podemos mostrar los productos en este momento');
-              }
-       }
 
        return (<section className='contenedor_instrumentos_carrousel'>{ items.length ? <>
            <Carrousel breakPoints={breakPoints} >

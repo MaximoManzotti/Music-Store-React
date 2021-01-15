@@ -1,8 +1,0 @@
-.ContenedorCarrito {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #00000098;
-    margin: 2em 11em 0em 11em;
-    border-radius: 1em;
-}
