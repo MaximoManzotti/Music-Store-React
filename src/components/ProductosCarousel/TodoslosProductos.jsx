@@ -21,18 +21,18 @@ function Productos() {
      
      const getProducstFromDB = ()=> {
             db.collection('Productos').get()
-            .then(docs => docs.forEach(doc => console.log(doc)))
+            .then(docs => docs.forEach(doc => setItems(doc.data())))
             .catch(e => console.log(e))         }
 
          useEffect(() => {
               getProducstFromDB();
               // eslint-disable-next-line react-hooks/exhaustive-deps
        }, [])
-
+ console.log(items)
 
        return (<section className='contenedor_instrumentos_carrousel'>{ items.length ? <>
            <Carrousel breakPoints={breakPoints} >
-              {( Instrumentos.map((u , index) =>
+              {( items.map((u , index) =>
                      <Link to={`/items/${u.id}`} className='VerMas' key={index}>
                             <div className='Producto' key={u.id}>
                                    <p className='txt_producto'>{u.Marca} {u.Modelo}</p>
