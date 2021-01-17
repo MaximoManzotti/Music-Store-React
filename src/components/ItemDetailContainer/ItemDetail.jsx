@@ -1,7 +1,7 @@
 import "../ItemDetailContainer/itemDetailStyle.css";
 import { useContext, useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import Instrumentos from ".././ItemListContainer/ProductList/productlist";
+// import Instrumentos from ".././ItemListContainer/ProductList/productlist";
 import Counter from "../Counter/counter";
 import Loading from "../assets/loading.gif";
 import { Store } from "../../store/index";
@@ -16,7 +16,7 @@ const Detail = () => {
   function onAdd(count, product) {
    
     if(data.items.length > 0){
-    var itemInCart =  db.collection('Productos').doc.id.get()
+    var itemInCart =  db.collection('productos').doc(id).get()
     }else{
      itemInCart = false
     }
@@ -52,16 +52,10 @@ const Detail = () => {
   }  history.push("/cart");}
 
 
-  const getProduct = new Promise((resolve, reject) => {
-    const lista = Instrumentos.filter((detalle) => detalle.id === Number(id));
-    const lista_resuelta = lista[0];
-    resolve(lista_resuelta);
-    // reject(alert('error'))
-  });
-
-  const getProducstFromDB = async () => {
+ 
+  const getProducstFromDB =  () => {
     try {
-      const result = await getProduct;
+      const result =  db.collection('productos').doc(id).get()
       setProduct(result);
     } catch (error) {
       alert("No podemos mostrar el producto");
