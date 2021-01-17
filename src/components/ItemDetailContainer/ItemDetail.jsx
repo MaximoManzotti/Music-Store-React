@@ -5,17 +5,18 @@ import Instrumentos from ".././ItemListContainer/ProductList/productlist";
 import Counter from "../Counter/counter";
 import Loading from "../assets/loading.gif";
 import { Store } from "../../store/index";
-
+import {getFirestore} from '../../DB';
 const Detail = () => {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   const [data, setData] = useContext(Store);
   const history = useHistory();
-
+  const db = getFirestore();
+    
   function onAdd(count, product) {
-
+   
     if(data.items.length > 0){
-    var itemInCart = data.items.some(i => i.id === id);
+    var itemInCart =  db.collection('Productos').doc.id.get()
     }else{
      itemInCart = false
     }
