@@ -11,12 +11,12 @@ const Detail = () => {
   const [data, setData] = useContext(Store);
   const history = useHistory();
   const db = getFirestore();
-
+  console.log(data.items.products)
   function onAdd(count, product) {
 
-    console.log(data)
+  
     if(data.items.length > 0){
-    var itemInCart = data.items.some(i => i.id === id);
+    var itemInCart = data.items.products.some(i => i.id === id);
     }else{
      itemInCart = false
     }

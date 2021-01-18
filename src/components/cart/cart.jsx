@@ -9,7 +9,7 @@ const Cart = () => {
   const [data, setData] = useContext(Store);
   let copyData = data;
   
-  
+
   //ELIMINA TODO EL CART
   function deleteAll() {
     copyData.items = [];
