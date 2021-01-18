@@ -1,22 +1,23 @@
 import "../ItemDetailContainer/itemDetailStyle.css";
 import { useContext, useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
-// import Instrumentos from ".././ItemListContainer/ProductList/productlist";
+import Instrumentos from ".././ItemListContainer/ProductList/productlist";
 import Counter from "../Counter/counter";
 import Loading from "../assets/loading.gif";
 import { Store } from "../../store/index";
-import {getFirestore} from '../../DB';
+import { getFirestore } from "../../DB";
+
 const Detail = () => {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   const [data, setData] = useContext(Store);
   const history = useHistory();
   const db = getFirestore();
-    
+
   function onAdd(count, product) {
-   
+    setData(db.collection('Productos').doc(id))
     if(data.items.length > 0){
-    var itemInCart =  db.collection('productos').doc(id).get()
+    var itemInCart = data.items.some(i => i.id === id);
     }else{
      itemInCart = false
     }
@@ -52,10 +53,16 @@ const Detail = () => {
   }  history.push("/cart");}
 
 
- 
-  const getProducstFromDB =  () => {
+  const getProduct = new Promise((resolve, reject) => {
+    const lista = Instrumentos.filter((detalle) => detalle.id === Number(id));
+    const lista_resuelta = lista[0];
+    resolve(lista_resuelta);
+    // reject(alert('error'))
+  });
+
+  const getProducstFromDB = async () => {
     try {
-      const result =  db.collection('productos').doc(id).get()
+      const result = await getProduct;
       setProduct(result);
     } catch (error) {
       alert("No podemos mostrar el producto");
