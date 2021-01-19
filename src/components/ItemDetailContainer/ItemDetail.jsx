@@ -21,7 +21,7 @@ const Detail = () => {
      itemInCart = false
     }
     if(itemInCart){
-      const newItems = [...data];
+      const newItems = [data];
       newItems.forEach((i)=>{
         if(i.id === id){
           i.cantidad+= count;
@@ -32,20 +32,19 @@ const Detail = () => {
         cantidad: Number(data.reduce((acc, item) => acc+=item.cantidad, 0)),
         precioTotal: 0
       })
-  } else {
-     //si llegaste aca es porque el producto no se encuentra en el cart, por lo que podes agregarlo normalmente
-  
-    setData({
-      ...data, 
-      id: id ,     
-      cantidad: JSON.stringify( data.cantidad + count),
-      items: [...data, {product, cantidad: count, id:id}]
-    });
-    localStorage.setItem("Cart", JSON.stringify({
-      ...data, 
+    } else {
+      //si llegaste aca es porque el producto no se encuentra en el cart, por lo que podes agregarlo normalmente
+     setData({
+       ...data,
+       id: id ,    
+       cantidad: JSON.stringify( data.cantidad + count),
+       items: {...data.items, product, cantidad: count, id:id}
+     });
+     localStorage.setItem("Cart", JSON.stringify({
+      ...data.items, 
       id: id , 
       cantidad:JSON.stringify( data.cantidad + count),
-      items: [...data, {product, cantidad: count, id:id}]
+      items: {...data.items, product, cantidad: count, id:id}
     }));
   
   }  history.push("/cart");}
