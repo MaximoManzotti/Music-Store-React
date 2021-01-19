@@ -11,17 +11,17 @@ const Detail = () => {
   const [data, setData] = useContext(Store);
   const history = useHistory();
   const db = getFirestore();
-  console.log(data.items.products)
+  console.log(data)
   function onAdd(count, product) {
 
   
-    if(data.items.length > 0){
-    var itemInCart = data.items.products.some(i => i.id === id);
+    if(data.length > 0){
+    var itemInCart = data.some(i => i.id === id);
     }else{
      itemInCart = false
     }
     if(itemInCart){
-      const newItems = [...data.items];
+      const newItems = [...data];
       newItems.forEach((i)=>{
         if(i.id === id){
           i.cantidad+= count;
@@ -29,7 +29,7 @@ const Detail = () => {
       })
       setData({
         items: newItems,
-        cantidad: Number(data.items.reduce((acc, item) => acc+=item.cantidad, 0)),
+        cantidad: Number(data.reduce((acc, item) => acc+=item.cantidad, 0)),
         precioTotal: 0
       })
   } else {
@@ -39,13 +39,13 @@ const Detail = () => {
       ...data, 
       id: id ,     
       cantidad: JSON.stringify( data.cantidad + count),
-      items: [...data.items, {product, cantidad: count, id:id}]
+      items: [...data, {product, cantidad: count, id:id}]
     });
     localStorage.setItem("Cart", JSON.stringify({
       ...data, 
       id: id , 
       cantidad:JSON.stringify( data.cantidad + count),
-      items: [...data.items, {product, cantidad: count, id:id}]
+      items: [...data, {product, cantidad: count, id:id}]
     }));
   
   }  history.push("/cart");}
@@ -62,8 +62,8 @@ const Detail = () => {
   const getProducstFromDB = async () => {
     try {
       const result = await getProduct;
+      console.log(result)
       setData(result);
-      console.log(data)
     } catch (error) {
       alert("No podemos mostrar el producto");
     }
