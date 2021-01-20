@@ -19,7 +19,6 @@ function Instrumento() {
            id: doc.id
     }));
     setItems(lista_productos);
-    console.log(lista_productos)
   })}
 
   useEffect(() => {

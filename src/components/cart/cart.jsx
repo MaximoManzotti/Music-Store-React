@@ -5,11 +5,23 @@ import { ImCross } from "react-icons/im";
 import { AiOutlineDelete } from "react-icons/ai";
 import Loading from "../assets/loading.gif";
 
+
 const Cart = () => {
   const [data, setData] = useContext(Store);
   let copyData = data;
-  
-  
+  let precio_total = []
+  let resultado_total = 0
+
+  function PrecioTotal() {
+    data.items.map((i) => (
+    precio_total.push(i.Precio * i.cantidad)
+    ))
+     resultado_total = Number(precio_total.reduce((acc, item) => acc += item, 0))
+  console.log(resultado_total)
+  } PrecioTotal()
+
+
+console.log(data)
   //ELIMINA TODO EL CART
   function deleteAll() {
     copyData.items = [];
@@ -19,12 +31,14 @@ const Cart = () => {
     setData({
       ...copyData,
       cantidad: data.items.reduce((acc, i) => acc + i.cantidad, 0),
+      precio: data.items.Precio
     });
     localStorage.setItem(
       "Cart",
       JSON.stringify({
         ...data,
         cantidad: data.items.reduce((acc, i) => acc + i.cantidad, 0),
+        precio :  data.items.Precio
       })
     );
   }
@@ -35,9 +49,11 @@ const Cart = () => {
     var idx = copyData.items.indexOf(lista_filtrada[0]);
     console.log(idx);
     copyData.items.splice(idx, 1);
+  
     setData({
       ...copyData,
       cantidad: data.items.reduce((acc, i) => acc + i.cantidad, 0),
+      precio:  data.items.Precio
     });
     localStorage.setItem(
       "Cart",
@@ -45,9 +61,13 @@ const Cart = () => {
         ...data,
         id: id,
         cantidad: data.items.reduce((acc, i) => acc + i.cantidad, 0),
+        precio: data.items.Precio
       })
     );
   }
+
+  
+
 
   return (
     <div>
@@ -60,18 +80,21 @@ const Cart = () => {
                 onClick={() => {
                   deleteAll();
                 }}
-                style={{position:'absolute'}} />
+                style={{position:'absolute', marginLeft: '0.5em'}}/>
             </h1>
-            <h2>Cantidad total: {data.cantidad}</h2>
+            <div className="Precio_Cantidad">
+            <h3 className='Precio_total'>Precio total: {resultado_total}</h3>
+            <h3 className='Cantidad_total'>Cantidad total: {data.cantidad}</h3>
+            </div>
             {data.items.map((i) => (
-              <h3 key="producto">
-                {i.product} - {i.cantidad}
+              <h4 key="producto">
+                {i.cantidad} {i.product} - ${i.Precio * i.cantidad}
                 <ImCross
                   onClick={() => {
                     deleteItem(i.id);
                   }}
-                style={{position:'absolute'}}/>
-              </h3>
+                style={{position:'absolute', marginLeft: '1em'}}/>
+              </h4>
             ))}
           </div>
         </>

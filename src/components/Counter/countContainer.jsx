@@ -19,7 +19,7 @@ function CountContainer({ count, add, less, quantity, onAdd,product}) {
       </div>
       <button
           className="agregar_al_carrito"
-          onClick={()=>{onAdd(count, product )}}>
+          onClick={()=>{onAdd(count, product)}}>
           <span id="span_1"></span>
           <span id="span_2"></span>
           <span id="span_3"></span>

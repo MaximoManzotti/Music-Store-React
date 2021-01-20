@@ -6,3 +6,13 @@
     margin: 2em 11em 0em 11em;
     border-radius: 1em;
 }
+
+.Precio_Cantidad {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.Cantidad_total {
+    margin-left: 1em;
+}

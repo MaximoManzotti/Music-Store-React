@@ -30,8 +30,7 @@ function Contador({ Quantity, onAdd , product}) {
     <div className="count_display">
       <div className="count_container">
         <p className="Cantidad_Productos">Disponibilidad de Productos: {qty}</p>
-        <CountContainer count={count} add={add} less={less} quantity={qty} onAdd={onAdd} product={product}/>
-    
+        <CountContainer count={count} add={add} less={less} quantity={qty} onAdd={onAdd} product={product} />
       </div>
     </div>
   );

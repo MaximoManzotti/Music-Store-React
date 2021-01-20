@@ -9,7 +9,7 @@ import Cart from "./components/cart/cart";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Store } from "./store";
 import ReactPlayer from "react-player";
-import Video from "./components/assets/FondoEstrella.mov";
+import Video from "./assets/FondoEstrella.mov";
 
 function App() {
   const [data, setData] = useState(

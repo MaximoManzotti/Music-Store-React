@@ -15,7 +15,7 @@ const Detail = () => {
   const db = getFirestore();
   console.log(data.items)
  
-  function onAdd(count, product) {
+  function onAdd(count, product ) {
     let itemInCart = false;
     if(data.items.length > 0){
         itemInCart = data.items.some(i => i.id === id);
@@ -32,19 +32,21 @@ const Detail = () => {
       setData({
         items: newItems, product,
         cantidad: Number(data.items.reduce((acc, item) => acc += item.cantidad, 0)),
-        precioTotal: 0
+        precio:  data.items.Precio
       })
     } else {
       //si llegaste aca es porque el producto no se encuentra en el cart, por lo que podes agregarlo normalmente        
         setData({
             ...data,
             cantidad:  data.cantidad + count,
-            items: [...data.items, {...item,product, cantidad: count}]
+            items: [...data.items, {...item,product, cantidad: count,}],
+            precio:  data.items.Precio
         });
         localStorage.setItem("Cart", JSON.stringify({
           ...data,
           cantidad:  data.cantidad + count,
-          items: [...data.items, {...item,product, cantidad: count}]
+          items: [...data.items, {...item,product, cantidad: count}],
+          precio: data.items.Precio
         }));
     }  
     history.push("/cart");
@@ -75,7 +77,7 @@ const Detail = () => {
   }, []);
   return (
     <section>
-      {item ? (
+      {item.Imagen ? (
         <>
           <div className="contenedor_detail">
             <div className="contenedor_imagen">
@@ -87,11 +89,11 @@ const Detail = () => {
             </div>
             <div className="div_producto">
               <p className="Titulo_Producto">
-                {item.Marca} {item.Modelo}
+               {item.Marca} {item.Modelo}
               </p>
               <p className="Descripcion_producto">{item.descripcion}</p>
               <p style={{ justifyContent: "center", display: "flex" }}>
-                {item.Precio}
+                ${item.Precio}
               </p>
               <Counter
                 Quantity={item.Quantity}
