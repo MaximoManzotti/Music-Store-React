@@ -13,24 +13,24 @@ const Detail = () => {
   const [item, setItem] = useState({})
   const history = useHistory();
   const db = getFirestore();
-  console.log(data)
+  console.log(data.items)
  
   function onAdd(count, product) {
     let itemInCart = false;
-    if(data.length > 0){
+    if(data.items.length > 0){
         itemInCart = data.items.some(i => i.id === id);
     } else{
       itemInCart = false
     }
     if(itemInCart){
-      const newItems = [...data];
+      const newItems = [...data.items];
       newItems.forEach((i)=>{
         if(i.id === id){
           i.cantidad += count;
         }
       })
       setData({
-        items: newItems,
+        items: newItems, product,
         cantidad: Number(data.items.reduce((acc, item) => acc += item.cantidad, 0)),
         precioTotal: 0
       })
