@@ -16,14 +16,12 @@ const Detail = () => {
   console.log(data)
  
   function onAdd(count, product) {
+    let itemInCart = false;
     if(data.length > 0){
-      if(data.id === id){
-      var itemInCart = true
-      }
+        itemInCart = data.items.some(i => i.id === id);
     } else{
       itemInCart = false
     }
-
     if(itemInCart){
       const newItems = [...data];
       newItems.forEach((i)=>{
@@ -36,21 +34,17 @@ const Detail = () => {
         cantidad: Number(data.items.reduce((acc, item) => acc += item.cantidad, 0)),
         precioTotal: 0
       })
-
     } else {
       //si llegaste aca es porque el producto no se encuentra en el cart, por lo que podes agregarlo normalmente        
         setData({
-          ...data,
-          id: id ,    
-          cantidad: Number( data.cantidad + count),
-          items: [...data.items, {product, cantidad: count, id:id}]
+            ...data,
+            cantidad:  data.cantidad + count,
+            items: [...data.items, {...item,product, cantidad: count}]
         });
-
         localStorage.setItem("Cart", JSON.stringify({
-          ...data.items, 
-          id: id , 
-          cantidad: Number( data.cantidad + count),
-          items: [...data.items, {product, cantidad: count, id:id}]
+          ...data,
+          cantidad:  data.cantidad + count,
+          items: [...data.items, {...item,product, cantidad: count}]
         }));
     }  
     history.push("/cart");
