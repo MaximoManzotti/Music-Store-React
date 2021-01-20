@@ -9,7 +9,7 @@ const Cart = () => {
   const [data, setData] = useContext(Store);
   let copyData = data;
   
-
+  
   //ELIMINA TODO EL CART
   function deleteAll() {
     copyData.items = [];
@@ -28,6 +28,7 @@ const Cart = () => {
       })
     );
   }
+
   //ELIMINA DONDE HAGA CLICK EL USUARIO
   function deleteItem(id) {
     let lista_filtrada = copyData.items.filter((e) => e.id === id);
