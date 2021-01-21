@@ -12,8 +12,17 @@ const Detail = () => {
   const [item, setItem] = useState({})
   const history = useHistory();
   const db = getFirestore();
-  console.log(data.items)
- 
+  let resultado_total = 0;
+  let precio_total = [];
+
+  function PrecioTotal() {
+    data.items.map((i) => precio_total.push(i.Precio * i.cantidad));
+    resultado_total =  Number( precio_total.reduce((acc, item) => (acc += item), 0))
+    setData({
+      ...data,
+       total: resultado_total
+    })
+  }
   function onAdd(count, product ) {
     let itemInCart = false;
     if(data.items.length > 0){
@@ -97,6 +106,7 @@ const Detail = () => {
               <Counter
                 Quantity={item.Quantity}
                 onAdd={onAdd}
+                preciototal={PrecioTotal}
                 product={`${item.Marca} ${item.Modelo}`}
               />
             </div>

@@ -19,10 +19,7 @@ const Cart = () => {
      Number( precio_total.reduce((acc, item) => (acc += item), 0)
     )
 
-    Resultado(resultado_total)
-  }
-  PrecioTotal();
-
+  }PrecioTotal()
   //ELIMINA TODO EL CART
 
   function deleteAll() {
@@ -34,6 +31,7 @@ const Cart = () => {
       ...copyData,
       cantidad: data.items.reduce((acc, i) => acc + i.cantidad, 0),
       precio: data.items.Precio,
+      total: resultado_total
     });
     localStorage.setItem(
       "Cart",
@@ -41,6 +39,7 @@ const Cart = () => {
         ...data,
         cantidad: data.items.reduce((acc, i) => acc + i.cantidad, 0),
         precio: data.items.Precio,
+        total: resultado_total
       })
     );
   }
@@ -56,6 +55,7 @@ const Cart = () => {
       ...copyData,
       cantidad: data.items.reduce((acc, i) => acc + i.cantidad, 0),
       precio: data.items.Precio,
+      total: resultado_total
     });
     localStorage.setItem(
       "Cart",
@@ -64,17 +64,10 @@ const Cart = () => {
         id: id,
         cantidad: data.items.reduce((acc, i) => acc + i.cantidad, 0),
         precio: data.items.Precio,
+        total: resultado_total
       })
     );
   }
-
-function Resultado(resultado) {
-  setData({
-    ...data,
-    total: resultado
-    })
-}
-
 
 console.log(data)
   return (
