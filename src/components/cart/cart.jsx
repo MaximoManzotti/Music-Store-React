@@ -5,12 +5,14 @@ import { ImCross } from "react-icons/im";
 import { AiOutlineDelete } from "react-icons/ai";
 import Loading from "../../assets/loading.gif";
 import { useHistory } from "react-router-dom";
+
 const Cart = () => {
   const [data, setData] = useContext(Store);
   let copyData = data;
   let precio_total = []
   let resultado_total = 0
   const history = useHistory();
+  
   function PrecioTotal() {
     data.items.map((i) => (
     precio_total.push(i.Precio * i.cantidad)
