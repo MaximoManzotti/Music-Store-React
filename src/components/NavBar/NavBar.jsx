@@ -1,4 +1,4 @@
-import Murcielago_Logo from '../assets/bat_logo.svg';
+import Murcielago_Logo from '../../assets/bat_logo.svg';
 import './NavBarStyles.css';
 import IconoCarrito from './CartWidget'
 import NavBar from './NavMap.jsx'

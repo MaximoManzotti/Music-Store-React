@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import Checkout from './components/Checkout/Checkout'
 import NavBarPhone from "./components/NavBar/NavBarPhone";
 import Instrumentos from "./components/ItemListContainer/Instrumentos/instrumentos";
 import Home from "./components/Home/home";
@@ -10,6 +11,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Store } from "./store";
 import ReactPlayer from "react-player";
 import Video from "./assets/FondoEstrella.mov";
+import checkout from "./components/Checkout/Checkout";
 
 function App() {
   const [data, setData] = useState(
@@ -56,9 +58,11 @@ function App() {
               <Route exact path="/category/:instrumentos?">
                 <Instrumentos />
               </Route>
-
               <Route exact path="/items/:id?">
                 <Detail />
+              </Route>
+              <Route exact path="/checkout">
+                <Checkout />
               </Route>
             </Switch>
           </BrowserRouter>

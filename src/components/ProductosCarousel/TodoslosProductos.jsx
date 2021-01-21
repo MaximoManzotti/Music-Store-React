@@ -1,5 +1,5 @@
 import "./styleProducts.css";
-import Loading from "../assets/loading.gif";
+import Loading from "../../assets/loading.gif";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Carrousel from "react-elastic-carousel";

@@ -3,25 +3,30 @@ import { useContext } from "react";
 import { Store } from "../../store";
 import { ImCross } from "react-icons/im";
 import { AiOutlineDelete } from "react-icons/ai";
-import Loading from "../assets/loading.gif";
-
+import Loading from "../../assets/loading.gif";
+import { useHistory } from "react-router-dom";
 
 const Cart = () => {
   const [data, setData] = useContext(Store);
   let copyData = data;
   let precio_total = []
   let resultado_total = 0
+  const history = useHistory();
 
   function PrecioTotal() {
     data.items.map((i) => (
     precio_total.push(i.Precio * i.cantidad)
     ))
      resultado_total = Number(precio_total.reduce((acc, item) => acc += item, 0))
-  console.log(resultado_total)
-  } PrecioTotal()
+  setData({
+    ...data,
+    total:resultado_total
+  })
+
+  } 
 
 
-console.log(data)
+
   //ELIMINA TODO EL CART
   function deleteAll() {
     copyData.items = [];
@@ -31,16 +36,20 @@ console.log(data)
     setData({
       ...copyData,
       cantidad: data.items.reduce((acc, i) => acc + i.cantidad, 0),
-      precio: data.items.Precio
+      precio: data.items.Precio,
+
+
     });
     localStorage.setItem(
       "Cart",
       JSON.stringify({
         ...data,
         cantidad: data.items.reduce((acc, i) => acc + i.cantidad, 0),
-        precio :  data.items.Precio
+        precio :  data.items.Precio,
+ 
       })
     );
+    PrecioTotal()
   }
 
   //ELIMINA DONDE HAGA CLICK EL USUARIO
@@ -53,7 +62,8 @@ console.log(data)
     setData({
       ...copyData,
       cantidad: data.items.reduce((acc, i) => acc + i.cantidad, 0),
-      precio:  data.items.Precio
+      precio:  data.items.Precio,    
+
     });
     localStorage.setItem(
       "Cart",
@@ -61,9 +71,11 @@ console.log(data)
         ...data,
         id: id,
         cantidad: data.items.reduce((acc, i) => acc + i.cantidad, 0),
-        precio: data.items.Precio
+        precio: data.items.Precio,
+
       })
     );
+    PrecioTotal()
   }
 
   
@@ -83,7 +95,7 @@ console.log(data)
                 style={{position:'absolute', marginLeft: '0.5em'}}/>
             </h1>
             <div className="Precio_Cantidad">
-            <h3 className='Precio_total'>Precio total: {resultado_total}</h3>
+            <h3 className='Precio_total'>Precio total: ${resultado_total}</h3>
             <h3 className='Cantidad_total'>Cantidad total: {data.cantidad}</h3>
             </div>
             {data.items.map((i) => (
@@ -96,7 +108,11 @@ console.log(data)
                 style={{position:'absolute', marginLeft: '1em'}}/>
               </h4>
             ))}
+            <button onClick={()=>{ history.push("/checkout")}}>
+              Pasar a Comprar
+            </button>
           </div>
+
         </>
       ) : (
         <div>

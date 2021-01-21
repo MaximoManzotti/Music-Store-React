@@ -3,7 +3,7 @@ import Productos from "../ProductosCarousel/TodoslosProductos";
 import { FaGuitar, FaDrum } from "react-icons/fa";
 import { GiGuitarBassHead, GiPartyHat } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
-import Loading from '../assets/loading.gif';
+import Loading from '../../assets/loading.gif';
 
 
 function home() {

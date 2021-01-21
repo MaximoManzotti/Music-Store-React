@@ -1,5 +1,5 @@
 import "../../ItemListContainer/style_Instrumentos.css";
-import Loading from "../../assets/loading.gif";
+import Loading from "../../../assets/loading.gif";
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getFirestore } from "../../../DB";

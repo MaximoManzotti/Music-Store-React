@@ -2,10 +2,9 @@ import "../ItemDetailContainer/itemDetailStyle.css";
 import { useContext, useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import Counter from "../Counter/counter";
-import Loading from "../assets/loading.gif";
+import Loading from "../../assets/loading.gif";
 import { Store } from "../../store/index";
 import { getFirestore } from "../../DB";
-
 
 const Detail = () => {
   const { id } = useParams(); 
