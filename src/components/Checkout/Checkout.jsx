@@ -4,9 +4,10 @@ import { Store } from "../../store/index";
 
 
 function Checkout() {
+    // eslint-disable-next-line no-unused-vars
     const [data, setData] = useContext(Store);
 
-    console.log(...data)
+    console.log(data)
 
     return(
 <form className="Formulario">

@@ -6,7 +6,6 @@ import React from "react";
 
 
 function CountContainer({ count, add, less, quantity, onAdd,product , preciototal}) {
-  
   var qty = { quantity }
   return (
 
@@ -19,7 +18,7 @@ function CountContainer({ count, add, less, quantity, onAdd,product , preciotota
       </div>
       <button
           className="agregar_al_carrito"
-          onClick={()=>{onAdd(count, product);preciototal()}}>
+          onClick={()=>{preciototal(); onAdd(count, product)}}>
           <span id="span_1"></span>
           <span id="span_2"></span>
           <span id="span_3"></span>

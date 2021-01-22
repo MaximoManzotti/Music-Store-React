@@ -13,13 +13,12 @@ const Detail = () => {
   const history = useHistory();
   const db = getFirestore();
   let resultado_total = 0;
+  let precio_total = [];
 
+    function PrecioTotal() {
+  data.items.map((i) => precio_total.push(i.Precio * i.cantidad));
+  resultado_total =  Number( precio_total.reduce((acc, item) => (acc += item), 0))
 
-  function PrecioTotal() {
-
-    let precio_total = [];
-    data.items.map((i) => precio_total.push(i.Precio * i.cantidad));
-    resultado_total =  Number( precio_total.reduce((acc, item) => (acc += item), 0))
     setData({
       ...data,
        total: resultado_total
@@ -42,7 +41,8 @@ const Detail = () => {
       setData({
         items: newItems, product,
         cantidad: Number(data.items.reduce((acc, item) => acc += item.cantidad, 0)),
-        precio:  data.items.Precio
+        precio:  data.items.Precio,
+        total: resultado_total
       })
     } else {
       //si llegaste aca es porque el producto no se encuentra en el cart, por lo que podes agregarlo normalmente        
@@ -50,13 +50,15 @@ const Detail = () => {
             ...data,
             cantidad:  data.cantidad + count,
             items: [...data.items, {...item,product, cantidad: count,}],
-            precio:  data.items.Precio
+            precio:  data.items.Precio,
+            total: resultado_total
         });
         localStorage.setItem("Cart", JSON.stringify({
           ...data,
           cantidad:  data.cantidad + count,
           items: [...data.items, {...item,product, cantidad: count}],
-          precio: data.items.Precio
+          precio: data.items.Precio,
+          total: resultado_total
         }));
     }  
     history.push("/cart");
@@ -74,7 +76,6 @@ const Detail = () => {
   const getProducstFromDB = async () => {
     try {
       const result = await getProduct;
-      console.log(result)
       setItem(result);
     } catch (error) {
       alert("No podemos mostrar el producto");
@@ -83,6 +84,7 @@ const Detail = () => {
 
   useEffect(() => {
     getProducstFromDB();
+    PrecioTotal()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
