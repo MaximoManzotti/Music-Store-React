@@ -11,7 +11,6 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Store } from "./store";
 import ReactPlayer from "react-player";
 import Video from "./assets/FondoEstrella.mov";
-import checkout from "./components/Checkout/Checkout";
 
 function App() {
   const [data, setData] = useState(

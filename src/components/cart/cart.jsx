@@ -55,7 +55,7 @@ const Cart = () => {
       ...copyData,
       cantidad: data.items.reduce((acc, i) => acc + i.cantidad, 0),
       precio: data.items.Precio,
-      total: resultado_total
+       total: resultado_total
     });
     localStorage.setItem(
       "Cart",
@@ -64,7 +64,6 @@ const Cart = () => {
         id: id,
         cantidad: data.items.reduce((acc, i) => acc + i.cantidad, 0),
         precio: data.items.Precio,
-        total: resultado_total
       })
     );
   }

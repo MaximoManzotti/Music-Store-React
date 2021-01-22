@@ -13,9 +13,11 @@ const Detail = () => {
   const history = useHistory();
   const db = getFirestore();
   let resultado_total = 0;
-  let precio_total = [];
+
 
   function PrecioTotal() {
+
+    let precio_total = [];
     data.items.map((i) => precio_total.push(i.Precio * i.cantidad));
     resultado_total =  Number( precio_total.reduce((acc, item) => (acc += item), 0))
     setData({
