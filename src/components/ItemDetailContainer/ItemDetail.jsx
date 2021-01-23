@@ -15,14 +15,16 @@ const Detail = () => {
   let resultado_total = 0;
   let precio_total = [];
 
-    function PrecioTotal() {
+
   data.items.map((i) => precio_total.push(i.Precio * i.cantidad));
   resultado_total =  Number( precio_total.reduce((acc, item) => (acc += item), 0))
 
+  function PrecioTotal() {
     setData({
       ...data,
        total: resultado_total
     })
+    history.push("/cart");
   }
   function onAdd(count, product ) {
     let itemInCart = false;
@@ -84,7 +86,6 @@ const Detail = () => {
 
   useEffect(() => {
     getProducstFromDB();
-    PrecioTotal()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (

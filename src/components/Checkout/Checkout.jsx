@@ -12,7 +12,7 @@ function Checkout() {
   const db = getFirestore();
     const orders = db.collection("Ventas")
   
-
+console.log(data)
 
   const [form, setForm] = useState({
     nombre: "",
@@ -25,13 +25,18 @@ function Checkout() {
     codigoseguridad: "",
   });
 
-  const handleChangeInput = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
-  };
+  // const handleChangeInput = (e) => {
+  //   setForm({
+  //     ...form,
+  //     [e.target.name]: e.target.value,
+  //   });
+  // };
 
+  const set = (name) => {
+    return ({ target: { value } }) => {
+      setForm((oldform) => ({ ...oldform, [name]: value }));
+    };
+  };
 
   const ventas = {
      users: form,
@@ -49,75 +54,86 @@ function Checkout() {
 })
 .catch(e => console.log(e));
 }
+
   return (
-    !venta ?
-    <form className="Formulario" onSubmit={handleSubmitForm}>
+    !venta ? (
+    <form className="Formulario" 
+    onSubmit={handleSubmitForm}>
       <input
+        required min="2"
         type="text"
         value={form.nombre}
         name="nombre"
         placeholder="Nombre"
-        onChange={handleChangeInput}
+        onChange={set("nombre")}
+        
       />
 
-      <input
+      <input   
+        required 
         type="text"
         value={form.apellido}
         name="apellido"
         placeholder="Apellido"
-        onChange={handleChangeInput}
-      />
+        onChange={set("apellido")}
+       />
 
       <input
+      required
         type="text"
         value={form.email}
         name="email"
         placeholder="Email"
-        onChange={handleChangeInput}
+        onChange={set("email")} 
       />
- <input
+      <input
+        required
         type="text"
         value={form.confirmacionemail}
         name="confirmacionemail"
         placeholder="Confirmacion Email"
-        onChange={handleChangeInput}
+        onChange={set("confirmacionemail")}
       />
       <input
+        required
         type="text"
         value={form.telefono}
         name="telefono"
         placeholder="Telefono"
-        onChange={handleChangeInput}
+        onChange={set("telefono")}
       />
 
       <input
+        required
         type="text"
         value={form.tarjeta}
         name="tarjeta"
         placeholder="Tarjeta"
-        onChange={handleChangeInput}
+        onChange={set("tarjeta")}
       />
 
       <input
+       required
         type="text"
         value={form.expiracion}
         name="expiracion"
         placeholder="Fecha de Expiracion"
-        onChange={handleChangeInput}
+        onChange={set("expiracion")}
       />
 
       <input
+       required
         type="text"
         value={form.codigoseguridad}
         name="codigoseguridad"
         placeholder="Codigo de Seguridad"
-        onChange={handleChangeInput}
-      />
+        onChange={set("codigoseguridad")}     
+         />
 
-      <button>Pagar</button>
-    </form>:
-                    <p>La compra se realizó correctamente, tu  código de seguimiento es: {idCompra}</p>
-  );
+      <button type="submit">Pagar</button>
+    </form>) : (
+                  <p>  La compra se realizó correctamente, tu  código de seguimiento es: {idCompra} </p>
+   ) );
 }
 
 export default Checkout;

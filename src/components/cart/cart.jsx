@@ -18,7 +18,6 @@ const Cart = () => {
     resultado_total =
      Number( precio_total.reduce((acc, item) => (acc += item), 0)
     )
-
   }PrecioTotal()
   //ELIMINA TODO EL CART
 
@@ -101,6 +100,7 @@ console.log(data)
               </h4>
             ))}
             <button
+            // disabled={true}
               onClick={() => {
                 history.push("/checkout");
               }}
