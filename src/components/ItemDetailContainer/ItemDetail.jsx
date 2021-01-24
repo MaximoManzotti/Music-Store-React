@@ -12,20 +12,8 @@ const Detail = () => {
   const [item, setItem] = useState({})
   const history = useHistory();
   const db = getFirestore();
-  let resultado_total = 0;
-  let precio_total = [];
+  
 
-
-  data.items.map((i) => precio_total.push(i.Precio * i.cantidad));
-  resultado_total =  Number( precio_total.reduce((acc, item) => (acc += item), 0))
-
-  function PrecioTotal() {
-    setData({
-      ...data,
-       total: resultado_total
-    })
-    history.push("/cart");
-  }
   function onAdd(count, product ) {
     let itemInCart = false;
     if(data.items.length > 0){
@@ -44,7 +32,7 @@ const Detail = () => {
         items: newItems, product,
         cantidad: Number(data.items.reduce((acc, item) => acc += item.cantidad, 0)),
         precio:  data.items.Precio,
-        total: resultado_total
+       
       })
     } else {
       //si llegaste aca es porque el producto no se encuentra en el cart, por lo que podes agregarlo normalmente        
@@ -53,14 +41,14 @@ const Detail = () => {
             cantidad:  data.cantidad + count,
             items: [...data.items, {...item,product, cantidad: count,}],
             precio:  data.items.Precio,
-            total: resultado_total
+    
         });
         localStorage.setItem("Cart", JSON.stringify({
           ...data,
           cantidad:  data.cantidad + count,
           items: [...data.items, {...item,product, cantidad: count}],
           precio: data.items.Precio,
-          total: resultado_total
+
         }));
     }  
     history.push("/cart");
@@ -86,6 +74,7 @@ const Detail = () => {
 
   useEffect(() => {
     getProducstFromDB();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
@@ -111,7 +100,6 @@ const Detail = () => {
               <Counter
                 Quantity={item.Quantity}
                 onAdd={onAdd}
-                preciototal={PrecioTotal}
                 product={`${item.Marca} ${item.Modelo}`}
               />
             </div>

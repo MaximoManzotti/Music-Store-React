@@ -15,10 +15,9 @@ const Cart = () => {
 
   function PrecioTotal() {
     data.items.map((i) => precio_total.push(i.Precio * i.cantidad));
-    resultado_total =
-     Number( precio_total.reduce((acc, item) => (acc += item), 0)
-    )
+    resultado_total = Number( precio_total.reduce((acc, item) => (acc += item), 0))
   }PrecioTotal()
+  
   //ELIMINA TODO EL CART
 
   function deleteAll() {
@@ -30,15 +29,14 @@ const Cart = () => {
       ...copyData,
       cantidad: data.items.reduce((acc, i) => acc + i.cantidad, 0),
       precio: data.items.Precio,
-      total: resultado_total
+
     });
     localStorage.setItem(
       "Cart",
       JSON.stringify({
         ...data,
         cantidad: data.items.reduce((acc, i) => acc + i.cantidad, 0),
-        precio: data.items.Precio,
-        total: resultado_total
+
       })
     );
   }
@@ -54,7 +52,7 @@ const Cart = () => {
       ...copyData,
       cantidad: data.items.reduce((acc, i) => acc + i.cantidad, 0),
       precio: data.items.Precio,
-       total: resultado_total
+
     });
     localStorage.setItem(
       "Cart",
@@ -66,8 +64,6 @@ const Cart = () => {
       })
     );
   }
-
-console.log(data)
   return (
     <div>
       {copyData ? (
@@ -100,7 +96,6 @@ console.log(data)
               </h4>
             ))}
             <button
-            // disabled={true}
               onClick={() => {
                 history.push("/checkout");
               }}

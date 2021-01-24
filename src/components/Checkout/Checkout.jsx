@@ -10,9 +10,21 @@ function Checkout() {
   const [venta, completoVenta] = useState(false)
   const [idCompra, setIdCompra] = useState('');
   const db = getFirestore();
-    const orders = db.collection("Ventas")
-  
-console.log(data)
+  let precio_total = [];
+  let resultado_total = 0;
+  const orders = db.collection("Ventas")
+
+
+
+  data.items.map((i) => precio_total.push(i.Precio * i.cantidad));
+  resultado_total = Number( precio_total.reduce((acc, item) => (acc += item), 0))
+  function Total(){
+    setData({
+      ...data,
+      total: resultado_total
+    })
+  }
+  console.log(data.items, precio_total)
 
   const [form, setForm] = useState({
     nombre: "",
@@ -24,13 +36,6 @@ console.log(data)
     expiracion: "",
     codigoseguridad: "",
   });
-
-  // const handleChangeInput = (e) => {
-  //   setForm({
-  //     ...form,
-  //     [e.target.name]: e.target.value,
-  //   });
-  // };
 
   const set = (name) => {
     return ({ target: { value } }) => {
@@ -130,7 +135,7 @@ console.log(data)
         onChange={set("codigoseguridad")}     
          />
 
-      <button type="submit">Pagar</button>
+      <button type="submit" onClick={()=> Total()}>Pagar</button>
     </form>) : (
                   <p>  La compra se realizó correctamente, tu  código de seguimiento es: {idCompra} </p>
    ) );
