@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import PaginaNoEncontrada from './components/404/pagina_perdidas'
 import Checkout from './components/Checkout/Checkout'
 import NavBarPhone from "./components/NavBar/NavBarPhone";
 import Instrumentos from "./components/ItemListContainer/Instrumentos/instrumentos";
@@ -13,6 +14,7 @@ import ReactPlayer from "react-player";
 import Video from "./assets/FondoEstrella.mov";
 
 function App() {
+
   const [data, setData] = useState(
     localStorage.getItem("Cart")
       ? JSON.parse(localStorage.getItem("Cart"))
@@ -62,6 +64,9 @@ function App() {
               </Route>
               <Route exact path="/checkout">
                 <Checkout />
+              </Route>
+              <Route path="/*">
+                <PaginaNoEncontrada />
               </Route>
             </Switch>
           </BrowserRouter>

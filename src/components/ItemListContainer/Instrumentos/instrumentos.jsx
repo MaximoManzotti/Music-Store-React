@@ -10,7 +10,9 @@ function Instrumento() {
   const db = getFirestore();
   let lista_productos = [];
   
-  
+  console.log(db.collection('Productos').doc())
+
+
   const getProducts = () => {
     db.collection('Productos').where('categoria', '==', instrumentos).get()
   .then((docs) => {
