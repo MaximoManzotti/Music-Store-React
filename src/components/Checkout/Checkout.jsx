@@ -25,11 +25,12 @@ function Checkout() {
       db.collection("Productos").doc(e.id)
         .get()
         .then((i) => {
-          console.log(i.data().Quantity - e.cantidad);
-        });
-    });
-  }
-  cantidades();
+          db.collection("Productos").doc(e.id).update({
+            Quantity: (i.data().Quantity - e.cantidad)
+        })
+    })
+  })}
+
 
   data.items.map((i) => precio_total.push(i.Precio * i.cantidad));
   resultado_total = Number(
@@ -134,7 +135,7 @@ function Checkout() {
 
       <input
         required
-        type="text"
+        type="date"
         value={form.expiracion}
         name="expiracion"
         placeholder="Fecha de Expiracion"
@@ -150,7 +151,7 @@ function Checkout() {
         onChange={set("codigoseguridad")}
       />
 
-      <button type="submit" onClick={() => Total()}>
+      <button type="submit" onClick={() => {Total();cantidades();}}>
         Pagar
       </button>
     </form>
