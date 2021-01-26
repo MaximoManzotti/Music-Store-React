@@ -10,11 +10,11 @@ function Checkout() {
   const [venta, completoVenta] = useState(false);
   const [idCompra, setIdCompra] = useState("");
   const db = getFirestore();
+  
   const orders = db.collection("Ventas");
   let precio_total = [];
   let resultado_total = 0;
   let cantidades_productos = [];
-  
 
 
   function cantidades() {
@@ -27,6 +27,7 @@ function Checkout() {
         .then((i) => {
           db.collection("Productos").doc(e.id).update({
             Quantity: (i.data().Quantity - e.cantidad)
+
         })
     })
   })}
@@ -53,7 +54,6 @@ function Checkout() {
     expiracion: "",
     codigoseguridad: "",
   });
-
   const set = (name) => {
     return ({ target: { value } }) => {
       setForm((oldform) => ({ ...oldform, [name]: value }));
@@ -74,9 +74,17 @@ function Checkout() {
       .then(({ id }) => {
         completoVenta(true);
         setIdCompra(id);
+     
       })
       .catch((e) => console.log(e));
   };
+
+    let email = "Los Emails No Coinciden"
+    let deshabilitar = true
+     if(form.email === form.confirmacionemail){
+           email = ""
+           deshabilitar = false
+        }
 
   return !venta ? (
     <form className="Formulario" onSubmit={handleSubmitForm}>
@@ -150,8 +158,8 @@ function Checkout() {
         placeholder="Codigo de Seguridad"
         onChange={set("codigoseguridad")}
       />
-
-      <button type="submit" onClick={() => {Total();cantidades();}}>
+     <p> {email}</p>
+      <button type="submit" onClick={() => {Total(); cantidades();}} disabled={deshabilitar} >
         Pagar
       </button>
     </form>

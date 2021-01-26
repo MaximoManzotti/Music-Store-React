@@ -17,7 +17,7 @@ const Cart = () => {
     data.items.map((i) => precio_total.push(i.Precio * i.cantidad));
     resultado_total = Number( precio_total.reduce((acc, item) => (acc += item), 0))
   }PrecioTotal()
-  
+
   //ELIMINA TODO EL CART
 
   function deleteAll() {
