@@ -1,5 +1,5 @@
 import "./stylehome.css";
-import Productos from "../ProductosCarousel/TodoslosProductos";
+import Productos from "../CarrouselProducts/AllProducts";
 import { FaGuitar, FaDrum } from "react-icons/fa";
 import { GiGuitarBassHead, GiPartyHat } from "react-icons/gi";
 import { NavLink } from "react-router-dom";

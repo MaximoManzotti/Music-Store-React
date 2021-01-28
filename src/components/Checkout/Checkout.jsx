@@ -7,21 +7,22 @@ import firebase from "firebase/app";
 function Checkout() {
   // eslint-disable-next-line no-unused-vars
   const [data, setData] = useContext(Store);
-  const [venta, completoVenta] = useState(false);
-  const [idCompra, setIdCompra] = useState("");
+  const [sell, completeSell] = useState(false);
+  const [fecha, setTime] = useState('');
+  const [idSold, setId] = useState("");
   const db = getFirestore();
   
   const orders = db.collection("Ventas");
-  let precio_total = [];
-  let resultado_total = 0;
-  let cantidades_productos = [];
+  let totalPrice = [];
+  let totalResult = 0;
+  let quantityProducts = [];
 
 
-  function cantidades() {
+  function functionQuantitys() {
     data.items.map((i) =>
-      cantidades_productos.push({ cantidad: i.cantidad, id: i.id })
+      quantityProducts.push({ cantidad: i.cantidad, id: i.id })
     );
-    cantidades_productos.forEach((e) => {
+    quantityProducts.forEach((e) => {
       db.collection("Productos").doc(e.id)
         .get()
         .then((i) => {
@@ -33,22 +34,23 @@ function Checkout() {
   })}
 
 
-  data.items.map((i) => precio_total.push(i.Precio * i.cantidad));
-  resultado_total = Number(
-    precio_total.reduce((acc, item) => (acc += item), 0)
+  data.items.map((i) => totalPrice.push(i.Precio * i.cantidad));
+  totalResult = Number(
+    totalPrice.reduce((acc, item) => (acc += item), 0)
   );
   function Total() {
     setData({
       ...data,
-      total: resultado_total,
+      total: totalResult,
     });
   }
+ 
 
   const [form, setForm] = useState({
     nombre: "",
     apellido: "",
     email: "",
-    confirmacionemail: "",
+    confirmationemail: "",
     telefono: "",
     tarjeta: "",
     expiracion: "",
@@ -72,21 +74,21 @@ function Checkout() {
     orders
       .add(ventas)
       .then(({ id }) => {
-        completoVenta(true);
-        setIdCompra(id);
-     
+        completeSell(true);
+        setId(id);
+      setTime(ventas.data.toDate())
       })
       .catch((e) => console.log(e));
   };
 
     let email = "Los Emails No Coinciden"
-    let deshabilitar = true
-     if(form.email === form.confirmacionemail){
+    let disableEmail = true
+     if(form.email === form.confirmationemail){
            email = ""
-           deshabilitar = false
+           disableEmail = false
         }
 
-  return !venta ? (
+  return !sell ? (
     <form className="Formulario" onSubmit={handleSubmitForm}>
       <input
         required
@@ -118,11 +120,12 @@ function Checkout() {
       <input
         required
         type="text"
-        value={form.confirmacionemail}
+        value={form.confirmationemail}
         name="confirmacionemail"
         placeholder="Confirmacion Email"
         onChange={set("confirmacionemail")}
       />
+       
       <input
         required
         type="text"
@@ -158,18 +161,21 @@ function Checkout() {
         placeholder="Codigo de Seguridad"
         onChange={set("codigoseguridad")}
       />
-     <p> {email}</p>
-      <button type="submit" onClick={() => {Total(); cantidades();}} disabled={deshabilitar} >
+    <p> {email}</p>
+      <button type="submit" onClick={() => {Total(); functionQuantitys();}} disabled={disableEmail} >
         Pagar
       </button>
     </form>
   ) : (
+    <>
+<p>{fecha}</p>
     <p>
-      {" "}
-      La compra se realizó correctamente, tu código de seguimiento es:{" "}
-      {idCompra}{" "}
+      La compra se realizó correctamente, tu código de seguimiento es:
+      {idSold}
     </p>
+</>
   );
+  
 }
 
 export default Checkout;

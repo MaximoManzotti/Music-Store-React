@@ -16,3 +16,12 @@
 .Cantidad_total {
     margin-left: 1em;
 }
+.irCheckOut{
+    width: 12em;
+    height: 2em;
+    border-radius: 9em;
+    font-size: 0.9em;
+    background-color: #dfc298;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
+}

@@ -1,7 +1,7 @@
 import "./paginaNoEncontrada.css";
 import { SiDiscogs } from "react-icons/si";
 
-function pagina_no_disponible() {
+function error404() {
 
   return (
     <div className="error">
@@ -14,4 +14,4 @@ function pagina_no_disponible() {
   );
 }
 
-export default pagina_no_disponible;
+export default error404;

@@ -23,10 +23,10 @@ function Productos() {
     db.collection("Productos")
       .get()
       .then((docs) => {
-        docs.forEach((doc) => lista_productos.push({
+        docs.forEach((doc) => { if(doc.data().Quantity > 0){lista_productos.push({
                productos: doc.data(),
                id: doc.id
-        }));
+         })}});
         setItems(lista_productos);
         console.log(lista_productos)
       })

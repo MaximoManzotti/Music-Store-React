@@ -1,13 +1,13 @@
 import React from "react";
 import { useState } from "react";
-import PaginaNoEncontrada from './components/404/pagina_perdidas'
+import PaginaNoEncontrada from './components/404/pageNotFound'
 import Checkout from './components/Checkout/Checkout'
 import NavBarPhone from "./components/NavBar/NavBarPhone";
-import Instrumentos from "./components/ItemListContainer/Instrumentos/instrumentos";
+import Instrumentos from "./components/ItemListContainer/Instrumentos/instrument";
 import Home from "./components/Home/home";
 import NavBar from "./components/NavBar/NavBar";
 import Detail from "./components/ItemDetailContainer/ItemDetail";
-import Cart from "./components/cart/cart";
+import Cart from "./components/Cart/cart";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Store } from "./store";
 import ReactPlayer from "react-player";

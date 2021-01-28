@@ -95,7 +95,7 @@ const Cart = () => {
                 />
               </h4>
             ))}
-            <button
+            <button className='irCheckOut'
               onClick={() => {
                 history.push("/checkout");
               }}

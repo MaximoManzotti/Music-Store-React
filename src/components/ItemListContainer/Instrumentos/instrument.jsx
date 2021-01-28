@@ -6,32 +6,33 @@ import { getFirestore } from "../../../DB";
 
 function Instrumento() {
   const [items, setItems] = useState([]);
-  const { instrumentos } = useParams();
+  const { instrumentos: instrument } = useParams();
   const db = getFirestore();
-  let lista_productos = [];
+  let productList = [];
   
 
   const getProducts = () => {
-    db.collection('Productos').where('categoria', '==', instrumentos).get()
+    db.collection('Productos').where('categoria', '==', instrument).get()
   .then((docs) => {
-    docs.forEach((doc) => lista_productos.push({
+    docs.forEach((doc) =>{ if(doc.data().Quantity > 0){
+      productList.push({
            productos: doc.data(),
            id: doc.id
-    }));
-    setItems(lista_productos);
+    })}});
+    setItems(productList);
   })}
 
   useEffect(() => {
     getProducts();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [instrumentos])
+  }, [instrument])
 
   return (
     <section className="contenedor_instrumentos">
       {items.length > 0 ? (
         <>
           {items.map((u, index ) => (
-            <Link to={`/items/${u.id}`} className="VerMas" key={index} >
+            <Link to={`/items/${u.id}`} className="ver_mas" key={index} >
               <div className="Producto" key={u.id}>
                 <p className="txt_producto">
                   {u.Marca} {u.productos.Modelo}
@@ -41,7 +42,7 @@ function Instrumento() {
                   alt="Guitarra"
                   className="Foto_instrumento"
                 />
-                <p className="txt_producto">{u.productos.Precio}</p>
+                <p className="txt_producto">${u.productos.Precio}</p>
               </div>
             </Link>
           ))}
