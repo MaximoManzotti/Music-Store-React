@@ -2,7 +2,6 @@ import "../ItemDetailContainer/itemDetailStyle.css";
 import { useContext, useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import Counter from "../Counter/counter";
-import Loading from "../../assets/loading.gif";
 import { Store } from "../../store/index";
 import { getFirestore } from "../../DB";
 
@@ -78,8 +77,7 @@ const Detail = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <section>
-      {item.Imagen ? (
+    <section>{item.Quantity > 0  ?(
         <>
           <div className="contenedor_detail">
             <div className="contenedor_imagen">
@@ -105,12 +103,7 @@ const Detail = () => {
             </div>
           </div>
         </>
-      ) : (
-        <div>
-          <img src={Loading} alt="Cargando..." />
-          <p className="txt_cargando">Cargando</p>
-        </div>
-      )}
+      ) : (<p>Producto no encontrado</p>) }
     </section>
   );
 }

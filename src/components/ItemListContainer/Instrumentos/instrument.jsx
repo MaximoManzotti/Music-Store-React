@@ -1,5 +1,4 @@
 import "../../ItemListContainer/style_Instrumentos.css";
-import Loading from "../../../assets/loading.gif";
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getFirestore } from "../../../DB";
@@ -28,8 +27,8 @@ function Instrumento() {
   }, [instrument])
 
   return (
-    <section className="contenedor_instrumentos">
-      {items.length > 0 ? (
+    <section className="contenedor_instrumentos">{items.length ?(
+  
         <>
           {items.map((u, index ) => (
             <Link to={`/items/${u.id}`} className="ver_mas" key={index} >
@@ -47,12 +46,7 @@ function Instrumento() {
             </Link>
           ))}
         </>
-      ) : (
-        <div>
-          <img src={Loading} alt="Cargando..." />
-          <p className="txt_cargando">Cargando</p>
-        </div>
-      )}
+      ) :(<p>Categoria no encontrado</p>) }
     </section>
   );
 }
