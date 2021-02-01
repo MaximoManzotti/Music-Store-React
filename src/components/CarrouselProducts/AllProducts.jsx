@@ -28,7 +28,6 @@ function Productos() {
                id: doc.id
          })}});
         setItems(lista_productos);
-        console.log(lista_productos)
       })
       .catch((e) => console.log(e));
   };

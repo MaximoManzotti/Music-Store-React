@@ -3,8 +3,8 @@ import { CgShoppingCart } from 'react-icons/cg';
 import ItemListContainer from '../ItemListContainer/ItemListContainer';
 
 
-function Carrito() {
+function Cart() {
   return(<> <CgShoppingCart className='Carrito'/>
   <ItemListContainer/> </>)};
 
-export default Carrito;
+export default Cart;
