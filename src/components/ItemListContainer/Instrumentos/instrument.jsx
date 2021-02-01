@@ -31,7 +31,7 @@ function Instrumento() {
   
         <>
           {items.map((u, index ) => (
-            <Link to={`/items/${u.id}`} className="ver_mas" key={index} >
+            <Link to={`/items/${u.id}`} className="ver_mas" key={index}>
               <div className="Producto" key={u.id}>
                 <p className="txt_producto">
                   {u.Marca} {u.productos.Modelo}

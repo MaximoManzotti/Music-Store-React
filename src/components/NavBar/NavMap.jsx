@@ -1,4 +1,5 @@
 import NavItem from './NavLink.jsx'
+import './NavBarStyles.css'
 
 function Nav({titulo, action}) {
     const menuItems = [
@@ -21,7 +22,9 @@ function Nav({titulo, action}) {
     ]
 
     return (
-         menuItems.map((seccion, index) => <li key={index}> <NavItem key={index} text={seccion.texto} url={`/category${seccion.ruta}`}/></li>))
-}
+        <ul className="ul_nav">
+        { menuItems.map((seccion, index) =><NavItem key={index}  text={seccion.texto} url={`/category${seccion.ruta}`}/>)}
+         </ul>
+    )}
 
 export default Nav;

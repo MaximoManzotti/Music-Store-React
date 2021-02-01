@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import CountContainer from "./countContainer";
 
 
-function Contador({ Quantity, onAdd , product,  preciototal}) {
+function Counter({ Quantity, onAdd , product}) {
   const [count, setCount] = useState(1);
 
   
@@ -37,4 +37,4 @@ function Contador({ Quantity, onAdd , product,  preciototal}) {
 
 }
 
-export default Contador;
+export default Counter;
