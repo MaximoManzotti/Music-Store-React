@@ -10,7 +10,7 @@ function Instrumento() {
   let productList = [];
   
 
-  const getProducts = () => {
+  const TraerProductos = () => {
     db.collection('Productos').where('categoria', '==', instrument).get()
   .then((docs) => {
     docs.forEach((doc) =>{ if(doc.data().Quantity > 0){
@@ -22,7 +22,7 @@ function Instrumento() {
   })}
 
   useEffect(() => {
-    getProducts();
+    TraerProductos();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [instrument])
 

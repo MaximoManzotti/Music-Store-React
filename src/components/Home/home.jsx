@@ -1,5 +1,5 @@
 import "./stylehome.css";
-import Productos from "../CarrouselProducts/AllProducts";
+import Products from "../CarrouselProducts/AllProducts";
 import { FaGuitar, FaDrum } from "react-icons/fa";
 import { GiGuitarBassHead, GiPartyHat } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
@@ -11,7 +11,7 @@ function home() {
     
     <div className="home">
     
-    {  Productos ? (
+    {  Products ? (
       <>
     
       <section className='TituloSeccion'>
@@ -51,7 +51,7 @@ function home() {
       </div>
       </section>
       <h2>PRODUCTOS</h2>
-      <Productos /> 
+      <Products /> 
       </> ) : (
         <div>
           <img src={Loading} alt="Cargando..." />

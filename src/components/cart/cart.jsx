@@ -13,10 +13,10 @@ const Cart = () => {
   let resultado_total = 0;
   const history = useHistory();
 
-  function PrecioTotal() {
+  function TotalPrice() {
     data.items.map((i) => precio_total.push(i.Precio * i.cantidad));
     resultado_total = Number( precio_total.reduce((acc, item) => (acc += item), 0))
-  }PrecioTotal()
+  }TotalPrice()
 
   //ELIMINA TODO EL CART
 

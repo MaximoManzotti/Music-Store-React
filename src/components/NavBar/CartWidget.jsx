@@ -1,10 +1,10 @@
 import { CgShoppingCart } from 'react-icons/cg';
 
-import ItemListContainer from '../ItemListContainer/ItemListContainer';
+import ListaContainer from '../ItemListContainer/ItemListContainer';
 
 
-function Cart() {
+function CarritoIcono() {
   return(<> <CgShoppingCart className='Carrito'/>
-  <ItemListContainer/> </>)};
+  <ListaContainer/> </>)};
 
-export default Cart;
+export default CarritoIcono;

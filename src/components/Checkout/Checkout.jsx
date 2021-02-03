@@ -8,7 +8,7 @@ function Checkout() {
   // eslint-disable-next-line no-unused-vars
   const [data, setData] = useContext(Store);
   const [sell, completeSell] = useState(false);
-  const [fecha, setTime] = useState('');
+  const [time, setTime] = useState();
   const [idSold, setId] = useState("");
   const db = getFirestore();
   
@@ -76,17 +76,19 @@ function Checkout() {
       .then(({ id }) => {
         completeSell(true);
         setId(id);
-      setTime(ventas.data.toDate())
+      setTime(JSON.stringify(ventas.data.toDate()))
       })
       .catch((e) => console.log(e));
   };
 
-    let email = "Los Emails No Coinciden"
-    let disableEmail = true
-     if(form.email === form.confirmationemail){
-           email = ""
-           disableEmail = false
-        }
+let email = "Los Emails No Coinciden"
+let disableEmail = true
+   if(form.email === form.confirmacionemail){
+         email = ""
+         disableEmail = false
+      }
+
+  
 
   return !sell ? (
     <form className="Formulario" onSubmit={handleSubmitForm}>
@@ -120,7 +122,7 @@ function Checkout() {
       <input
         required
         type="text"
-        value={form.confirmationemail}
+        value={form.confirmacionemail}
         name="confirmacionemail"
         placeholder="Confirmacion Email"
         onChange={set("confirmacionemail")}
@@ -168,7 +170,7 @@ function Checkout() {
     </form>
   ) : (
     <>
-<p>{fecha}</p>
+<p>{time}</p>
     <p>
       La compra se realizó correctamente, tu código de seguimiento es:
       {idSold}

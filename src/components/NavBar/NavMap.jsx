@@ -1,7 +1,7 @@
 import NavItem from './NavLink.jsx'
 import './NavBarStyles.css'
 
-function Nav({titulo, action}) {
+function Navegar({titulo, action}) {
     const menuItems = [
         {
             texto: 'guitarras',
@@ -27,4 +27,4 @@ function Nav({titulo, action}) {
          </ul>
     )}
 
-export default Nav;
+export default Navegar;
