@@ -2,7 +2,7 @@ import './NavBarStyles.css';
 import {useState} from 'react';
 import IconoCarrito from './CartWidget'
 import NavItem from './NavMap'
-function NavPhone() {
+function NavTelefono() {
     const [showMenu, setshowMenu] = useState(false);
 
     const openshowMenu = () => {
@@ -38,4 +38,4 @@ function NavPhone() {
     )
 }
 
-export default NavPhone;
+export default NavTelefono;

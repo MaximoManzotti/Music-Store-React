@@ -1,3 +1,9 @@
 .contenedor_instrumentos_carrousel {
     width: 100%;
 }
+
+.Loading_gif {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

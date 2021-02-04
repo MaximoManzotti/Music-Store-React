@@ -65,7 +65,7 @@ function App() {
               <Route exact path="/checkout">
                 <Checkout />
               </Route>
-              <Route path="/*">
+              <Route path="*">
                 <PaginaNoEncontrada />
               </Route>
             </Switch>

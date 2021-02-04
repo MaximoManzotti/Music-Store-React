@@ -60,7 +60,7 @@ function Productos() {
           </Carrousel>
         </>
       ) : (
-        <div>
+        <div className="Loading_gif">
           <img src={Cargando} alt="Cargando..." />
           <p className="txt_cargando">Cargando</p>
         </div>

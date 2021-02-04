@@ -11,40 +11,38 @@ function Checkout() {
   const [time, setTime] = useState();
   const [idSold, setId] = useState("");
   const db = getFirestore();
-  
+
   const orders = db.collection("Ventas");
   let totalPrice = [];
   let totalResult = 0;
   let quantityProducts = [];
-
 
   function functionQuantitys() {
     data.items.map((i) =>
       quantityProducts.push({ cantidad: i.cantidad, id: i.id })
     );
     quantityProducts.forEach((e) => {
-      db.collection("Productos").doc(e.id)
+      db.collection("Productos")
+        .doc(e.id)
         .get()
         .then((i) => {
-          db.collection("Productos").doc(e.id).update({
-            Quantity: (i.data().Quantity - e.cantidad)
-
-        })
-    })
-  })}
-
+          db.collection("Productos")
+            .doc(e.id)
+            .update({
+              Quantity: i.data().Quantity - e.cantidad,
+            });
+        });
+    });
+  }
 
   data.items.map((i) => totalPrice.push(i.Precio * i.cantidad));
-  totalResult = Number(
-    totalPrice.reduce((acc, item) => (acc += item), 0)
-  );
+  totalResult = Number(totalPrice.reduce((acc, item) => (acc += item), 0));
   function Total() {
     setData({
       ...data,
       total: totalResult,
     });
   }
- 
 
   const [form, setForm] = useState({
     nombre: "",
@@ -76,19 +74,17 @@ function Checkout() {
       .then(({ id }) => {
         completeSell(true);
         setId(id);
-      setTime(JSON.stringify(ventas.data.toDate()))
+        setTime(JSON.stringify(ventas.data.toDate()));
       })
       .catch((e) => console.log(e));
   };
 
-let email = "Los Emails No Coinciden"
-let disableEmail = true
-   if(form.email === form.confirmacionemail){
-         email = ""
-         disableEmail = false
-      }
-
-  
+  let email = "Los Emails No Coinciden";
+  let disableEmail = true;
+  if (form.email === form.confirmacionemail) {
+    email = "";
+    disableEmail = false;
+  }
 
   return !sell ? (
     <form className="Formulario" onSubmit={handleSubmitForm}>
@@ -127,7 +123,7 @@ let disableEmail = true
         placeholder="Confirmacion Email"
         onChange={set("confirmacionemail")}
       />
-       
+
       <input
         required
         type="text"
@@ -163,21 +159,27 @@ let disableEmail = true
         placeholder="Codigo de Seguridad"
         onChange={set("codigoseguridad")}
       />
-    <p> {email}</p>
-      <button type="submit" onClick={() => {Total(); functionQuantitys();}} disabled={disableEmail} >
+      <p> {email}</p>
+      <button
+        type="submit"
+        onClick={() => {
+          Total();
+          functionQuantitys();
+        }}
+        disabled={disableEmail}
+      >
         Pagar
       </button>
     </form>
   ) : (
     <>
-<p>{time}</p>
-    <p>
-      La compra se realizó correctamente, tu código de seguimiento es:
-      {idSold}
-    </p>
-</>
+      <p>{time}</p>
+      <p>
+        La compra se realizó correctamente, tu código de seguimiento es:
+        {idSold}
+      </p>
+    </>
   );
-  
 }
 
 export default Checkout;

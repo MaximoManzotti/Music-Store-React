@@ -1,12 +1,10 @@
 import "./Container.css";
 import React, { useState } from "react";
-import CountContainer from "./countContainer";
+import ContadorContador from "./countContainer";
 
-
-function Counter({ Quantity, onAdd , product}) {
+function Contador({ Quantity, onAdd, product }) {
   const [count, setCount] = useState(1);
 
-  
   const qty = Quantity;
 
   const add = () => {
@@ -30,11 +28,17 @@ function Counter({ Quantity, onAdd , product}) {
     <div className="count_display">
       <div className="count_container">
         <p className="Cantidad_Productos">Disponibilidad de Productos: {qty}</p>
-        <CountContainer count={count} add={add} less={less} quantity={qty} onAdd={onAdd} product={product} />
+        <ContadorContador
+          count={count}
+          add={add}
+          less={less}
+          quantity={qty}
+          onAdd={onAdd}
+          product={product}
+        />
       </div>
     </div>
   );
-
 }
 
-export default Counter;
+export default Contador;
