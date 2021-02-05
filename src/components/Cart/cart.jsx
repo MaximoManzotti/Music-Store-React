@@ -6,7 +6,7 @@ import { AiOutlineDelete } from "react-icons/ai";
 import Loading from "../../assets/loading.gif";
 import { useHistory } from "react-router-dom";
 
-const Cart = () => {
+const Carrito = () => {
   const [data, setData] = useContext(Store);
   let copyData = data;
   let precio_total = [];
@@ -20,7 +20,7 @@ const Cart = () => {
 
   //ELIMINA TODO EL CART
 
-  function deleteAll() {
+  function EliminarTodo() {
     copyData.items = [];
     setData({
       ...copyData,
@@ -43,7 +43,7 @@ const Cart = () => {
 
   //ELIMINA DONDE HAGA CLICK EL USUARIO
 
-  function deleteItem(id) {
+  function EliminarItem(id) {
     let lista_filtrada = copyData.items.filter((e) => e.id === id);
     var idx = copyData.items.indexOf(lista_filtrada[0]);
     console.log(idx);
@@ -73,7 +73,7 @@ const Cart = () => {
               Estás en el carrito
               <AiOutlineDelete
                 onClick={() => {
-                  deleteAll();
+                  EliminarTodo();
                 }}
                 style={{ position: "absolute", marginLeft: "0.5em" }}
               />
@@ -89,7 +89,7 @@ const Cart = () => {
                 {i.cantidad} {i.product} - ${i.Precio * i.cantidad}
                 <ImCross
                   onClick={() => {
-                    deleteItem(i.id);
+                    EliminarItem(i.id);
                   }}
                   style={{ position: "absolute", marginLeft: "1em" }}
                 />
@@ -113,4 +113,4 @@ const Cart = () => {
     </div>
   );
 };
-export default Cart;
+export default Carrito;
