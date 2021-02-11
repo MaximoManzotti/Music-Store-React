@@ -1,5 +1,5 @@
 import "./styleCart.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Store } from "../../store";
 import { ImCross } from "react-icons/im";
 import { AiOutlineDelete } from "react-icons/ai";
@@ -8,6 +8,7 @@ import { useHistory } from "react-router-dom";
 
 const Carrito = () => {
   const [data, setData] = useContext(Store);
+  const [activar , setActivar] = useState(false)
   let copyData = data;
   let precio_total = [];
   let resultado_total = 0;
@@ -17,6 +18,13 @@ const Carrito = () => {
     data.items.map((i) => precio_total.push(i.Precio * i.cantidad));
     resultado_total = Number( precio_total.reduce((acc, item) => (acc += item), 0))
   }PrecioTotal()
+
+
+ if(activar === false && copyData.items.length > 0){
+setActivar(true)
+}else if(copyData.items.length === 0 && activar === true){
+  setActivar(false)
+}
 
   //ELIMINA TODO EL CART
 
@@ -95,13 +103,14 @@ const Carrito = () => {
                 />
               </h4>
             ))}
+            { activar ?
             <button className='irCheckOut'
               onClick={() => {
                 history.push("/checkout");
               }}
             >
               Pasar a Comprar
-            </button>
+            </button> : <div> </div>}
           </div>
         </>
       ) : (
