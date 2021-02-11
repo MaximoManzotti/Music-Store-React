@@ -6,6 +6,7 @@ import { getFirestore } from "../../../DB";
 function Instrumento() {
   const [items, setItems] = useState([]);
   const { instrumentos: instrument } = useParams();
+  const [exist, setExist] = useState(true);
   const db = getFirestore();
   let productList = [];
 
@@ -13,27 +14,29 @@ function Instrumento() {
     db.collection("Productos")
       .where("categoria", "==", instrument)
       .get()
-      .then((docs) => {
+      .then((docs) => {;
         docs.forEach((doc) => {
           if (doc.data().Quantity > 0) {
             productList.push({
               productos: doc.data(),
               id: doc.id,
-            });
-          }
+            })}
+          setExist(doc.exists)
         });
         setItems(productList);
       });
   };
 
+
   useEffect(() => {
     TraerProductos();
+    
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [instrument]);
 
   return (
     <section className="contenedor_instrumentos">
-      {items.length ? (
+      {exist ? (
         <>
           {items.map((u, index) => (
             <Link to={`/items/${u.id}`} className="ver_mas" key={index}>
