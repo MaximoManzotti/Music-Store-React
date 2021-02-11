@@ -19,3 +19,4 @@ Para este proyecto le agregue estas dependencias para dar un poco de estilo a la
 ## Usage
 
 Para probar la aplicacion tenes que utilizar el comando npm start desde el cmd y luego ir desde tu navegador al localhost que te sea indicado en esta.
+# ecommerse
