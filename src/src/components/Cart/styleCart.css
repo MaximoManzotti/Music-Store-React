@@ -1,0 +1,27 @@
+.ContenedorCarrito {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #00000098;
+    margin: 2em 11em 0em 11em;
+    border-radius: 1em;
+}
+
+.Precio_Cantidad {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.Cantidad_total {
+    margin-left: 1em;
+}
+.irCheckOut{
+    width: 12em;
+    height: 2em;
+    border-radius: 9em;
+    font-size: 0.9em;
+    background-color: #dfc298;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
+}
