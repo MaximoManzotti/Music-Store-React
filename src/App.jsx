@@ -35,8 +35,7 @@ function App() {
         }}
         className="video"
         url={Video}
-        playing={true}
-      
+        playing={false}
         muted={true}
         loop={true}
 
